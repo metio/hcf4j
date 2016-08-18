@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.github.sebhoss.adapters.http</groupId>
+    <artifactId>http-client-adapter</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>http-client-adapter-okhttp3</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.github.sebhoss.adapters.http</groupId>
+      <artifactId>http-client-adapter-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.sebhoss.adapters.http</groupId>
+      <artifactId>http-client-adapter-shared</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.sebhoss.adapters.http</groupId>
+      <artifactId>http-client-adapter-errorcodes</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+     <dependency>
+      <groupId>com.github.sebhoss.utils.memoization</groupId>
+      <artifactId>memoization-map</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mock-server</groupId>
+      <artifactId>mockserver-netty</artifactId>
+      <version>3.10.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

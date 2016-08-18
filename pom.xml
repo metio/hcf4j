@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    This file is part of http-client-adapter. It is subject to the license terms in the LICENSE file found in the top-level
+    directory of this distribution and at http://creativecommons.org/publicdomain/zero/1.0/. No part of http-client-adapter,
+    including this file, may be copied, modified, propagated, or distributed except according to the terms contained
+    in the LICENSE file.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                                  PARENT                                 -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- https://maven.apache.org/pom.html#Inheritance -->
+  <parent>
+    <groupId>de.xn--ho-hia.maven.parents</groupId>
+    <artifactId>maven-parents-java-prototype</artifactId>
+    <version>2016.07.02-120434</version>
+  </parent>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                               INFORMATIONS                              -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <groupId>com.github.sebhoss.adapters.http</groupId>
+  <artifactId>http-client-adapter</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>HTTP Client Adapter</name>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>http-client-adapter-api</module>
+    <module>http-client-adapter-errorcodes</module>
+    <module>http-client-adapter-shared</module>
+    <!-- 
+    <module>http-client-adapter-okhttp2</module>
+    <module>http-client-adapter-httpclient</module>
+     -->
+    <module>http-client-adapter-okhttp3</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>ch.qos.cal10n</groupId>
+      <artifactId>cal10n-api</artifactId>
+      <version>0.8.1</version>
+    </dependency>
+  </dependencies>
+
+</project>

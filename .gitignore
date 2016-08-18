@@ -1,0 +1,8 @@
+.settings/
+target/
+.classpath
+.project
+.pmd
+.pmdruleset.xml
+.ansible-git-mirror-*
+.flattened-pom.xml
