@@ -4,6 +4,9 @@ import ch.qos.cal10n.BaseName;
 import ch.qos.cal10n.Locale;
 import ch.qos.cal10n.LocaleData;
 
+/**
+ * Messages for errors in third-party dependencies.
+ */
 @BaseName("third-party")
 @LocaleData({ @Locale("en"), @Locale("de") })
 public enum ThirdPartyErrors {
