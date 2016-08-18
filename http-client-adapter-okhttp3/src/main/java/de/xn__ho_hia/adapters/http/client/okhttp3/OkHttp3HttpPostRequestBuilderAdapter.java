@@ -9,8 +9,7 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request.Builder;
 
-final class OkHttp3HttpPostRequestBuilderAdapter extends AbstractOkHttp3Adapter
-        implements HttpPostRequestBuilder {
+final class OkHttp3HttpPostRequestBuilderAdapter extends AbstractOkHttp3Adapter implements HttpPostRequestBuilder {
 
     OkHttp3HttpPostRequestBuilderAdapter(
             final AbstractOkHttp3Adapter adapter,

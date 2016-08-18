@@ -3,7 +3,7 @@
 
   <parent>
     <groupId>com.github.sebhoss.adapters.http</groupId>
-    <artifactId>http-client-adapter</artifactId>
+    <artifactId>http-client-adapter.java</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 

@@ -14,6 +14,7 @@ import de.xn__ho_hia.adapters.http.client.builder.HttpPostRequestBuilder;
  *
  *
  */
+@SuppressWarnings("nls")
 public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
 
     private HttpClient       client;
@@ -30,7 +31,6 @@ public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
     /**
      *
      */
-    @SuppressWarnings("nls")
     @Test
     public void shouldCreateNonNullGetRequestBuilderForValidHttpUrl() {
         // given
@@ -46,7 +46,6 @@ public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
     /**
      *
      */
-    @SuppressWarnings("nls")
     @Test
     public void shouldCreateNonNullPostRequestBuilderForValidHttpUrl() {
         // given
@@ -62,7 +61,6 @@ public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
     /**
      *
      */
-    @SuppressWarnings("nls")
     @Test
     public void shouldGetBodyContent() {
         // given
