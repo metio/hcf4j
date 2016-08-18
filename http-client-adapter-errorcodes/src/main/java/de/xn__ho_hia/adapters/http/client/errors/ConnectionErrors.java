@@ -4,8 +4,8 @@ import ch.qos.cal10n.BaseName;
 import ch.qos.cal10n.Locale;
 import ch.qos.cal10n.LocaleData;
 
-@BaseName("urls")
-@LocaleData(defaultCharset = "UTF8", value = { @Locale("en"), @Locale("de") })
+@BaseName("connections")
+@LocaleData({ @Locale("en"), @Locale("de") })
 public enum ConnectionErrors {
 
     /** Used whenever a connection cannot be established. */

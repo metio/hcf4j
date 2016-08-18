@@ -4,11 +4,13 @@ import ch.qos.cal10n.BaseName;
 import ch.qos.cal10n.Locale;
 import ch.qos.cal10n.LocaleData;
 
-@BaseName("urls")
+@BaseName("third-party")
 @LocaleData({ @Locale("en"), @Locale("de") })
-public enum UrlErrors {
+public enum ThirdPartyErrors {
 
-    /** Used whenever an invalid HTTP/HTTPS URL is encountered. */
-    INVALID_URL;
+    /**
+     * Used whenever a third-party dependency complains about re-using objects.
+     */
+    ALREADY_EXECUTED;
 
 }

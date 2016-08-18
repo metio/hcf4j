@@ -5,6 +5,7 @@ import java.util.function.Function;
 import com.github.sebhoss.adapters.http.client.builder.HttpPostRequestBuilder;
 import com.github.sebhoss.adapters.http.client.builder.HttpPostWithContentRequestBuilder;
 
+import ch.qos.cal10n.IMessageConveyor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request.Builder;
@@ -15,14 +16,15 @@ final class OkHttp3HttpPostRequestBuilderAdapter extends AbstractOkHttp3Adapter
     OkHttp3HttpPostRequestBuilderAdapter(
             final AbstractOkHttp3Adapter adapter,
             final Builder requestBuilder) {
-        this(adapter.getClient(), adapter.getMediaTypeCreator(), requestBuilder);
+        this(adapter.getClient(), adapter.getMediaTypeCreator(), adapter.getMessages(), requestBuilder);
     }
 
     OkHttp3HttpPostRequestBuilderAdapter(
             final OkHttpClient client,
-            final Function<String, MediaType> memoizer,
+            final Function<String, MediaType> mediaTypeCreator,
+            final IMessageConveyor messages,
             final Builder requestBuilder) {
-        super(client, memoizer, requestBuilder);
+        super(client, mediaTypeCreator, messages, requestBuilder);
     }
 
     @Override

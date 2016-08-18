@@ -34,12 +34,12 @@ final class OkHttp3HttpClientAdapter implements HttpClient {
 
     @Override
     public HttpGetRequestBuilder get(final String url) {
-        return new OkHttp3HttpRequestAdapter(client, mediaTypeCreator, url(url).get());
+        return new OkHttp3HttpRequestAdapter(client, mediaTypeCreator, messages, url(url).get());
     }
 
     @Override
     public HttpPostRequestBuilder post(final String url) {
-        return new OkHttp3HttpPostRequestBuilderAdapter(client, mediaTypeCreator, url(url));
+        return new OkHttp3HttpPostRequestBuilderAdapter(client, mediaTypeCreator, messages, url(url));
     }
 
     private Request.Builder url(final String url) {
