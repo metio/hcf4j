@@ -3,12 +3,11 @@ package de.xn__ho_hia.adapters.http.client.okhttp3;
 import java.util.Locale;
 import java.util.function.Function;
 
-import com.github.sebhoss.utils.memoization.map.MapMemoization;
-
 import ch.qos.cal10n.IMessageConveyor;
 import ch.qos.cal10n.MessageConveyor;
 import de.xn__ho_hia.adapters.http.client.HttpClient;
 import de.xn__ho_hia.adapters.http.client.factory.HttpClientFactory;
+import de.xn__ho_hia.memoization.map.MapMemoize;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 
@@ -37,7 +36,7 @@ final class OkHttp3HttpClientFactory implements HttpClientFactory {
     }
 
     private void rebuildMediaTypeCreator() {
-        mediaTypeCreator = MapMemoization.memoize(MediaType::parse);
+        mediaTypeCreator = MapMemoize.function(MediaType::parse);
     }
 
     private void rebuildMessageConveyor() {

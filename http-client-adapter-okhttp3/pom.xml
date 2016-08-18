@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.github.sebhoss.adapters.http</groupId>
+    <groupId>de.xn--ho-hia.adapters.http.client</groupId>
     <artifactId>http-client-adapter.java</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
@@ -9,17 +9,17 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.github.sebhoss.adapters.http</groupId>
+      <groupId>de.xn--ho-hia.adapters.http.client</groupId>
       <artifactId>http-client-adapter-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.github.sebhoss.adapters.http</groupId>
+      <groupId>de.xn--ho-hia.adapters.http.client</groupId>
       <artifactId>http-client-adapter-shared</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.github.sebhoss.adapters.http</groupId>
+      <groupId>de.xn--ho-hia.adapters.http.client</groupId>
       <artifactId>http-client-adapter-errorcodes</artifactId>
       <version>${project.version}</version>
     </dependency>
@@ -29,9 +29,9 @@
       <version>3.2.0</version>
     </dependency>
      <dependency>
-      <groupId>com.github.sebhoss.utils.memoization</groupId>
-      <artifactId>memoization-map</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <groupId>de.xn--ho-hia.memoization</groupId>
+      <artifactId>memoization-core</artifactId>
+      <version>2.0.0-20160802182936</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

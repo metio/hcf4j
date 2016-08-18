@@ -23,7 +23,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               INFORMATIONS                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <groupId>com.github.sebhoss.adapters.http</groupId>
+  <groupId>de.xn--ho-hia.adapters.http.client</groupId>
   <artifactId>http-client-adapter.java</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>HTTP Client Adapter</name>
