@@ -38,7 +38,7 @@ final class OkHttp3HttpRequestAdapter extends AbstractOkHttp3Adapter implements 
             final Request request = requestBuilder.build();
             final Call call = client.newCall(request);
             final Response response = call.execute();
-            return new OkHttp3HttpResponseAdapter(response);
+            return new OkHttp3HttpResponseAdapter(response, messages);
         } catch (final IOException exception) {
             throw new HttpRequestException(messages.getMessage(ConnectionErrors.UNABLE_TO_CONNECT), exception);
         } catch (final IllegalStateException exception) {
