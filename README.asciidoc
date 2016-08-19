@@ -3,6 +3,8 @@ Sebastian Hoß <http://seb.xn--ho-hia.de/[@sebhoss]>
 :github-org: sebhoss
 :project-name: http-client-adapter.java
 
+image:https://www.openhub.net/p/http-client-adapter/widgets/project_thin_badge.gif["Open Hub statistics", link="https://www.openhub.net/p/http-client-adapter"]
+
 link:https://www.osgi.org/[OSGi] enabled adapters for HTTP clients in Java.
 
 == License
