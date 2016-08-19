@@ -5,6 +5,6 @@
  * in the LICENSE file.
  */
 /**
- *
+ * Test compatibility kit (TCK) for HTTP clients and their adapters.
  */
 package de.xn__ho_hia.adapters.http.client.tck;
