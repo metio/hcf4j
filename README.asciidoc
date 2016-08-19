@@ -1,0 +1,15 @@
+= http-client-adapter.java image:https://img.shields.io/badge/email-%40metio-brightgreen.svg?style=social&label=mail["Discuss on Google Groups", link="https://groups.google.com/forum/#!forum/metio"] image:https://img.shields.io/badge/irc-%23metio.wtf-brightgreen.svg?style=social&label=IRC["Chat on IRC", link="http://webchat.freenode.net/?channels=metio.wtf"]
+Sebastian Hoß <http://seb.xn--ho-hia.de/[@sebhoss]>
+:github-org: sebhoss
+:project-name: http-client-adapter.java
+
+link:https://www.osgi.org/[OSGi] enabled adapters for HTTP clients in Java.
+
+== License
+
+To the extent possible under law, the author(s) have dedicated all copyright
+and related and neighboring rights to this software to the public domain
+worldwide. This software is distributed without any warranty.
+
+You should have received a copy of the CC0 Public Domain Dedication along
+with this software. If not, see http://creativecommons.org/publicdomain/zero/1.0/.
