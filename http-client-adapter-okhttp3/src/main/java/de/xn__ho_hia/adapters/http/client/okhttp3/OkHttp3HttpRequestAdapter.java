@@ -7,14 +7,17 @@
 package de.xn__ho_hia.adapters.http.client.okhttp3;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.function.Function;
 
 import ch.qos.cal10n.IMessageConveyor;
 import de.xn__ho_hia.adapters.http.client.HttpResponse;
 import de.xn__ho_hia.adapters.http.client.builder.HttpGetRequestBuilder;
 import de.xn__ho_hia.adapters.http.client.errors.ConnectionErrors;
+import de.xn__ho_hia.adapters.http.client.errors.EncodingErrors;
 import de.xn__ho_hia.adapters.http.client.errors.ThirdPartyErrors;
 import de.xn__ho_hia.adapters.http.client.exception.HttpRequestException;
+import de.xn__ho_hia.adapters.http.client.exception.HttpResponseException;
 import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -43,8 +46,11 @@ final class OkHttp3HttpRequestAdapter extends AbstractOkHttp3Adapter implements 
         try {
             final Request request = requestBuilder.build();
             final Call call = client.newCall(request);
-            final Response response = call.execute();
-            return new OkHttp3HttpResponseAdapter(response, messages);
+            try (final Response response = call.execute()) {
+                return new OkHttp3HttpResponseAdapter(response.body().string());
+            }
+        } catch (final UnsupportedEncodingException exception) {
+            throw new HttpResponseException(messages.getMessage(EncodingErrors.INVALID_CHARSET), exception);
         } catch (final IOException exception) {
             throw new HttpRequestException(messages.getMessage(ConnectionErrors.UNABLE_TO_CONNECT), exception);
         } catch (final IllegalStateException exception) {
