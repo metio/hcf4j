@@ -1,0 +1,12 @@
+Bundle-License: Creative Commons Zero
+Bundle-Name: ${project.artifactId}
+Bundle-Description: ${project.description}
+Bundle-DocURL: ${project.url}
+Bundle-Version: ${project.version}
+Export-Package: de.xn__ho_hia.adapters.http.client.tck
+Import-Package: \
+    de.xn__ho_hia.adapters.http.client,\
+    de.xn__ho_hia.adapters.http.client.builder,\
+    de.xn__ho_hia.adapters.http.client.exception,\
+    de.xn__ho_hia.adapters.http.client.factory,\
+    *
