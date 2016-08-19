@@ -28,7 +28,7 @@ public class OkHttp3HttpClientAdapterInvalidUrlTheories {
      */
     @SuppressWarnings("nls")
     @DataPoints("urls")
-    public static List<String>              INVALID_URLS    = Arrays.asList(
+    public static List<String> INVALID_URLS = Arrays.asList(
             null,
             "",
             "abc",
@@ -53,7 +53,7 @@ public class OkHttp3HttpClientAdapterInvalidUrlTheories {
      *
      */
     @Rule
-    public ExpectedException                thrown          = ExpectedException.none();
+    public ExpectedException thrown = ExpectedException.none();
 
     /**
      * @param url
@@ -68,7 +68,8 @@ public class OkHttp3HttpClientAdapterInvalidUrlTheories {
         // given
         // when
         thrown.expect(HttpRequestException.class);
-        thrown.expectMessage(is("Invalid URL specified: " + url)); //$NON-NLS-1$
+        thrown.expectMessage(is(
+                String.format("Invalid URL specified: [%s]. Make sure to specify a valid HTTP/HTTPS address.", url))); //$NON-NLS-1$
 
         // then
         requestMethod.apply(url);
