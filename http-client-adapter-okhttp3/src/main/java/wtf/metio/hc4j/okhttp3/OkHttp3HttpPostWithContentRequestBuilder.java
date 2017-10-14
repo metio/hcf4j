@@ -32,7 +32,7 @@ final class OkHttp3HttpPostWithContentRequestBuilder extends AbstractOkHttp3Adap
         final RequestBody body = RequestBody.create(okHttpMediaType, content);
         final Builder post = requestBuilder.post(body);
 
-        return new OkHttp3HttpRequestAdapter(this, Checks.requireNonNull(post));
+        return new OkHttp3HttpRequest(this, Checks.requireNonNull(post));
     }
 
 }

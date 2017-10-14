@@ -38,7 +38,7 @@ final class OkHttp3HttpClientFactory implements HttpClientFactory {
         if (messages == null) {
             rebuildMessageConveyor();
         }
-        return new OkHttp3HttpClientAdapter(
+        return new OkHttp3HttpClient(
                 requireNonNull(client),
                 requireNonNull(mediaTypeCreator),
                 requireNonNull(messages));

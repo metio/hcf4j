@@ -27,15 +27,15 @@ import wtf.metio.hc4j.errors.ThirdPartyErrors;
 import wtf.metio.hc4j.exception.HttpRequestException;
 import wtf.metio.hc4j.exception.HttpResponseException;
 
-final class OkHttp3HttpRequestAdapter extends AbstractOkHttp3Adapter implements HttpGetRequestBuilder {
+final class OkHttp3HttpRequest extends AbstractOkHttp3Adapter implements HttpGetRequestBuilder {
 
-    OkHttp3HttpRequestAdapter(
+    OkHttp3HttpRequest(
             final AbstractOkHttp3Adapter adapter,
             final Builder requestBuilder) {
         this(adapter.getClient(), adapter.getMediaTypeCreator(), adapter.getMessages(), requestBuilder);
     }
 
-    OkHttp3HttpRequestAdapter(
+    OkHttp3HttpRequest(
             final OkHttpClient client,
             final Function<String, MediaType> mediaTypeCreator,
             final IMessageConveyor messages,
@@ -46,7 +46,7 @@ final class OkHttp3HttpRequestAdapter extends AbstractOkHttp3Adapter implements 
     @Override
     public HttpResponse executeOnCallingThread() {
         try (final Response response = client.newCall(requestBuilder.build()).execute()) {
-            return new OkHttp3HttpResponseAdapter(
+            return new OkHttp3HttpResponse(
                     requireNonNull(response.body().string()),
                     response.code());
         } catch (final UnsupportedEncodingException exception) {

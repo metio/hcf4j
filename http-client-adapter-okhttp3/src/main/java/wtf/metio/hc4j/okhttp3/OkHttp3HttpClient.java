@@ -24,13 +24,13 @@ import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hc4j.errors.UrlErrors;
 import wtf.metio.hc4j.exception.HttpRequestException;
 
-final class OkHttp3HttpClientAdapter implements HttpClient {
+final class OkHttp3HttpClient implements HttpClient {
 
     private final OkHttpClient                client;
     private final Function<String, MediaType> mediaTypeCreator;
     private final IMessageConveyor            messages;
 
-    OkHttp3HttpClientAdapter(
+    OkHttp3HttpClient(
             final OkHttpClient client,
             final Function<String, MediaType> mediaTypeCreator,
             final IMessageConveyor messages) {
@@ -41,20 +41,20 @@ final class OkHttp3HttpClientAdapter implements HttpClient {
 
     @Override
     public HttpGetRequestBuilder get(final String url) {
-        return new OkHttp3HttpRequestAdapter(client, mediaTypeCreator, messages,
+        return new OkHttp3HttpRequest(client, mediaTypeCreator, messages,
                 Checks.requireNonNull(url(url).get()));
     }
 
     @Override
     public HttpPostRequestBuilder post(final String url) {
-        return new OkHttp3HttpPostRequestBuilderAdapter(client, mediaTypeCreator, messages, url(url));
+        return new OkHttp3HttpPostRequestBuilder(client, mediaTypeCreator, messages, url(url));
     }
 
     private Request.Builder url(final String url) {
         return Optional.ofNullable(url)
                 .filter(Objects::nonNull)
-                .filter(OkHttp3HttpClientAdapter::isValidUrl)
-                .map(OkHttp3HttpClientAdapter::builder)
+                .filter(OkHttp3HttpClient::isValidUrl)
+                .map(OkHttp3HttpClient::builder)
                 .orElseThrow(httpRequestException(url));
     }
 

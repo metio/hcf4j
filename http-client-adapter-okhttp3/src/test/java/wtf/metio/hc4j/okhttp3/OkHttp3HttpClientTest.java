@@ -21,7 +21,7 @@ import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
  *
  */
 @SuppressWarnings("nls")
-public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
+public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
 
     @SuppressWarnings("null")
     private HttpClient       client;

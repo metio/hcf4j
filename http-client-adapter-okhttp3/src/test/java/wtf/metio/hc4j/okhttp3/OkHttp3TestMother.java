@@ -13,7 +13,7 @@ import de.xn__ho_hia.memoization.map.MapMemoize;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.okhttp3.OkHttp3HttpClientAdapter;
+import wtf.metio.hc4j.okhttp3.OkHttp3HttpClient;
 
 /**
  *
@@ -25,7 +25,7 @@ public class OkHttp3TestMother {
      *
      */
     @SuppressWarnings("null")
-    public static final HttpClient OkHttp3_HTTP_CLIENT = new OkHttp3HttpClientAdapter(
+    public static final HttpClient OkHttp3_HTTP_CLIENT = new OkHttp3HttpClient(
             new OkHttpClient(), MapMemoize.function(MediaType::parse), new MessageConveyor(Locale.ENGLISH));
 
     private OkHttp3TestMother() {

@@ -10,12 +10,12 @@ import org.eclipse.jdt.annotation.Checks;
 
 import wtf.metio.hc4j.HttpResponse;
 
-final class OkHttp3HttpResponseAdapter implements HttpResponse {
+final class OkHttp3HttpResponse implements HttpResponse {
 
     private final String body;
     private final int    statusCode;
 
-    OkHttp3HttpResponseAdapter(final String body, final int statusCode) {
+    OkHttp3HttpResponse(final String body, final int statusCode) {
         this.body = body;
         this.statusCode = statusCode;
     }

@@ -15,15 +15,15 @@ import okhttp3.Request.Builder;
 import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hc4j.builder.HttpPostWithContentRequestBuilder;
 
-final class OkHttp3HttpPostRequestBuilderAdapter extends AbstractOkHttp3Adapter implements HttpPostRequestBuilder {
+final class OkHttp3HttpPostRequestBuilder extends AbstractOkHttp3Adapter implements HttpPostRequestBuilder {
 
-    OkHttp3HttpPostRequestBuilderAdapter(
+    OkHttp3HttpPostRequestBuilder(
             final AbstractOkHttp3Adapter adapter,
             final Builder requestBuilder) {
         this(adapter.getClient(), adapter.getMediaTypeCreator(), adapter.getMessages(), requestBuilder);
     }
 
-    OkHttp3HttpPostRequestBuilderAdapter(
+    OkHttp3HttpPostRequestBuilder(
             final OkHttpClient client,
             final Function<String, MediaType> mediaTypeCreator,
             final IMessageConveyor messages,
