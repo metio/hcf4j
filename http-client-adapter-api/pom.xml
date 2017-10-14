@@ -6,6 +6,7 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>http-client-adapter-api</artifactId>
+  <name>HTTP Client Adapter API</name>
   <properties>
     <skipTests>true</skipTests>
   </properties>

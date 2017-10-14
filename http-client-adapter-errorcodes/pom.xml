@@ -8,5 +8,6 @@
   </parent>
 
   <artifactId>http-client-adapter-errorcodes</artifactId>
+  <name>HTTP Client Adapter Error Codes</name>
 
 </project>

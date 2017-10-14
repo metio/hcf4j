@@ -6,6 +6,7 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>http-client-adapter-shared</artifactId>
+  <name>HTTP Client Adapter Shared Code</name>
   <properties>
     <skipTests>true</skipTests>
   </properties>
