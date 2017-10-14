@@ -7,7 +7,6 @@
 package wtf.metio.hc4j.okhttp3;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.mockserver.client.server.MockServerClient;
 
@@ -23,18 +22,10 @@ import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
 @SuppressWarnings("nls")
 public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
 
-    @SuppressWarnings("null")
-    private HttpClient       client;
+    private final HttpClient client = OkHttp3ObjectMother.CLIENT;
+
     @SuppressWarnings("null")
     private MockServerClient mockServer;
-
-    /**
-     *
-     */
-    @Before
-    public void setUp() {
-        client = OkHttp3ObjectMother.CLIENT;
-    }
 
     /**
      *
