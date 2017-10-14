@@ -11,10 +11,9 @@ import wtf.metio.hc4j.factory.HttpClientFactory;
 
 final class HCHttpClientFactory implements HttpClientFactory {
 
-  @Override
-  public HttpClient buildHttpClient() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    @Override
+    public HttpClient buildHttpClient() {
+        return new HCHttpClient();
+    }
 
 }

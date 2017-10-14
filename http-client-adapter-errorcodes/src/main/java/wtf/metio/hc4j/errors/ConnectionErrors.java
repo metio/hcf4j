@@ -18,6 +18,9 @@ import ch.qos.cal10n.LocaleData;
 public enum ConnectionErrors {
 
     /** Used whenever a connection cannot be established. */
-    UNABLE_TO_CONNECT;
+    UNABLE_TO_CONNECT,
+
+    /** Used whenever target host IP address failed. */
+    LOOKUP_FAILED;
 
 }

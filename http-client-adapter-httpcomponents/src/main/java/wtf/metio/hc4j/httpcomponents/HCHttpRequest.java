@@ -20,59 +20,63 @@ import org.apache.http.protocol.RequestExpectContinue;
 import org.apache.http.protocol.RequestTargetHost;
 import org.apache.http.protocol.RequestUserAgent;
 import org.apache.http.util.EntityUtils;
+import org.eclipse.jdt.annotation.Checks;
 
+import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hc4j.HttpRequest;
 import wtf.metio.hc4j.HttpResponse;
+import wtf.metio.hc4j.errors.ConnectionErrors;
+import wtf.metio.hc4j.exception.HttpRequestException;
 
 final class HCHttpRequest implements HttpRequest {
 
-  @Override
-  public HttpResponse executeOnCallingThread() {
-    HttpProcessor httpproc = HttpProcessorBuilder.create()
-        .add(new RequestContent())
-        .add(new RequestTargetHost())
-        .add(new RequestConnControl())
-        .add(new RequestUserAgent("hc4j/99999-SNAPSHOT"))
-        .add(new RequestExpectContinue(true)).build();
+    private final IMessageConveyor messages;
 
-    HttpRequestExecutor httpexecutor = new HttpRequestExecutor();
-
-    HttpCoreContext coreContext = HttpCoreContext.create();
-    HttpHost host = new HttpHost("localhost", 8080);
-    coreContext.setTargetHost(host);
-
-    try (DefaultBHttpClientConnection connection = new DefaultBHttpClientConnection(8 * 1024)) {
-      String target = "";
-
-      if (!connection.isOpen()) {
-        Socket socket = new Socket(host.getHostName(), host.getPort());
-        connection.bind(socket);
-      }
-      BasicHttpRequest request = new BasicHttpRequest("GET", target);
-
-      httpexecutor.preProcess(request, httpproc, coreContext);
-      org.apache.http.HttpResponse response = httpexecutor.execute(request, connection, coreContext);
-      httpexecutor.postProcess(response, httpproc, coreContext);
-
-      HttpEntity entity = response.getEntity();
-      EntityUtils.consume(entity);
-
-      return new HCHttpResponse(
-          EntityUtils.toString(entity, StandardCharsets.UTF_8),
-          response.getStatusLine().getStatusCode());
-    } catch (UnknownHostException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (IOException exception) {
-      // TODO Auto-generated catch block
-      exception.printStackTrace();
-    } catch (HttpException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+    HCHttpRequest(final IMessageConveyor messages) {
+        this.messages = messages;
     }
 
-    // TODO Auto-generated method stub
-    return null;
-  }
+    @Override
+    public HttpResponse executeOnCallingThread() {
+        final HttpProcessor httpproc = HttpProcessorBuilder.create()
+                .add(new RequestContent())
+                .add(new RequestTargetHost())
+                .add(new RequestConnControl())
+                .add(new RequestUserAgent("hc4j/99999-SNAPSHOT")) //$NON-NLS-1$
+                .add(new RequestExpectContinue(true)).build();
+
+        final HttpRequestExecutor httpexecutor = new HttpRequestExecutor();
+
+        final HttpCoreContext coreContext = HttpCoreContext.create();
+        final HttpHost host = new HttpHost("localhost", 8080); //$NON-NLS-1$
+        coreContext.setTargetHost(host);
+
+        try (final DefaultBHttpClientConnection connection = new DefaultBHttpClientConnection(8 * 1024);
+                final Socket socket = new Socket(host.getHostName(), host.getPort());) {
+            connection.bind(socket);
+
+            final BasicHttpRequest request = new BasicHttpRequest("GET", ""); //$NON-NLS-1$ //$NON-NLS-2$
+
+            httpexecutor.preProcess(request, httpproc, coreContext);
+            final org.apache.http.HttpResponse response = httpexecutor.execute(request, connection, coreContext);
+            httpexecutor.postProcess(response, httpproc, coreContext);
+
+            final HttpEntity entity = response.getEntity();
+            EntityUtils.consume(entity);
+
+            return new HCHttpResponse(
+                    Checks.requireNonNull(EntityUtils.toString(entity, StandardCharsets.UTF_8)),
+                    response.getStatusLine().getStatusCode());
+        } catch (final UnknownHostException exception) {
+            throw new HttpRequestException(Checks.requireNonEmpty(
+                    messages.getMessage(ConnectionErrors.LOOKUP_FAILED)), exception);
+        } catch (final IOException exception) {
+            throw new HttpRequestException(Checks.requireNonEmpty(
+                    messages.getMessage(ConnectionErrors.UNABLE_TO_CONNECT)), exception);
+        } catch (final HttpException exception) {
+            throw new HttpRequestException(Checks.requireNonEmpty(
+                    messages.getMessage(ConnectionErrors.UNABLE_TO_CONNECT)), exception);
+        }
+    }
 
 }
