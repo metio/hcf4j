@@ -14,8 +14,13 @@ package wtf.metio.hc4j;
 public interface HttpResponse {
 
     /**
-     * @return The request body as a {@link String}.
+     * @return The response body as a {@link String}.
      */
     String getBodyContent();
+
+    /**
+     * @return The HTTP status code of the response.
+     */
+    int getStatusCode();
 
 }

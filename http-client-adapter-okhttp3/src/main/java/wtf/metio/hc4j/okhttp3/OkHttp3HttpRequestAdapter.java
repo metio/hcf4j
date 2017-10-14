@@ -20,6 +20,7 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Request.Builder;
+import okhttp3.Response;
 import wtf.metio.hc4j.HttpResponse;
 import wtf.metio.hc4j.builder.HttpGetRequestBuilder;
 import wtf.metio.hc4j.errors.ConnectionErrors;
@@ -27,7 +28,6 @@ import wtf.metio.hc4j.errors.EncodingErrors;
 import wtf.metio.hc4j.errors.ThirdPartyErrors;
 import wtf.metio.hc4j.exception.HttpRequestException;
 import wtf.metio.hc4j.exception.HttpResponseException;
-import okhttp3.Response;
 
 final class OkHttp3HttpRequestAdapter extends AbstractOkHttp3Adapter implements HttpGetRequestBuilder {
 
@@ -51,7 +51,9 @@ final class OkHttp3HttpRequestAdapter extends AbstractOkHttp3Adapter implements 
             final Request request = requestBuilder.build();
             final Call call = client.newCall(request);
             try (final Response response = call.execute()) {
-                return new OkHttp3HttpResponseAdapter(requireNonNull(response.body().string()));
+                return new OkHttp3HttpResponseAdapter(
+                        requireNonNull(response.body().string()),
+                        response.code());
             }
         } catch (final UnsupportedEncodingException exception) {
             throw new HttpResponseException(Checks.requireNonEmpty(

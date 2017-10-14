@@ -70,7 +70,7 @@ public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
      *
      */
     @Test
-    public void shouldGetBodyContent() {
+    public void shouldGetBodyContentAndStatusCode() {
         // given
         mockServer.when(request()
                 .withPath("/test")
@@ -84,6 +84,7 @@ public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
 
         // then
         Assert.assertEquals("test", response.getBodyContent());
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
 }
