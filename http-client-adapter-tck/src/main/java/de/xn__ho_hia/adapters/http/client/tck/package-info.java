@@ -7,4 +7,5 @@
 /**
  * Test compatibility kit (TCK) for HTTP clients and their adapters.
  */
+@org.eclipse.jdt.annotation.NonNullByDefault
 package de.xn__ho_hia.adapters.http.client.tck;
