@@ -3,12 +3,12 @@ Bundle-Name: ${project.artifactId}
 Bundle-Description: ${project.description}
 Bundle-DocURL: ${project.url}
 Bundle-Version: ${project.version}
-Export-Package: de.xn__ho_hia.adapters.http.client.okhttp3
+Export-Package: wtf.metio.hc4j.okhttp3
 Import-Package: \
-	de.xn__ho_hia.adapters.http.client,\
-	de.xn__ho_hia.adapters.http.client.builder,\
-	de.xn__ho_hia.adapters.http.client.errors,\
-	de.xn__ho_hia.adapters.http.client.exception,\
-	de.xn__ho_hia.adapters.http.client.factory,\
-	de.xn__ho_hia.adapters.http.client.shared,\
+	wtf.metio.hc4j,\
+	wtf.metio.hc4j.builder,\
+	wtf.metio.hc4j.errors,\
+	wtf.metio.hc4j.exception,\
+	wtf.metio.hc4j.factory,\
+	wtf.metio.hc4j.shared,\
 	*

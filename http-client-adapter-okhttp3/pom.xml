@@ -1,25 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>de.xn--ho-hia.adapters.http.client</groupId>
-    <artifactId>http-client-adapter.java</artifactId>
+    <groupId>wtf.metio.hc4j</groupId>
+    <artifactId>hc4j</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>http-client-adapter-okhttp3</artifactId>
 
   <dependencies>
     <dependency>
-      <groupId>de.xn--ho-hia.adapters.http.client</groupId>
+      <groupId>wtf.metio.hc4j</groupId>
       <artifactId>http-client-adapter-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>de.xn--ho-hia.adapters.http.client</groupId>
+      <groupId>wtf.metio.hc4j</groupId>
       <artifactId>http-client-adapter-shared</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>de.xn--ho-hia.adapters.http.client</groupId>
+      <groupId>wtf.metio.hc4j</groupId>
       <artifactId>http-client-adapter-errorcodes</artifactId>
       <version>${project.version}</version>
     </dependency>

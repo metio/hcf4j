@@ -23,10 +23,10 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               INFORMATIONS                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <groupId>de.xn--ho-hia.adapters.http.client</groupId>
-  <artifactId>http-client-adapter.java</artifactId>
+  <groupId>wtf.metio.hc4j</groupId>
+  <artifactId>hc4j</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>HTTP Client Adapter</name>
+  <name>HTTP Client Adapter for Java</name>
   <packaging>pom</packaging>
 
   <modules>
