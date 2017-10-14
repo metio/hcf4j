@@ -6,6 +6,8 @@
  */
 package de.xn__ho_hia.adapters.http.client.okhttp3;
 
+import static org.eclipse.jdt.annotation.Checks.requireNonNull;
+
 import org.junit.Rule;
 import org.mockserver.junit.MockServerRule;
 import org.mockserver.model.HttpRequest;
@@ -25,12 +27,12 @@ public abstract class AbstractMockHttpTest {
 
     @SuppressWarnings("static-method")
     protected HttpRequest request() {
-        return HttpRequest.request();
+        return requireNonNull(HttpRequest.request());
     }
 
     @SuppressWarnings("static-method")
     protected HttpResponse response() {
-        return HttpResponse.response();
+        return requireNonNull(HttpResponse.response());
     }
 
     protected String path(final String path) {

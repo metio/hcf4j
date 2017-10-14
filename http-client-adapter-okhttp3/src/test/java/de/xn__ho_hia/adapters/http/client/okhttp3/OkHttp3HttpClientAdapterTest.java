@@ -23,7 +23,9 @@ import de.xn__ho_hia.adapters.http.client.builder.HttpPostRequestBuilder;
 @SuppressWarnings("nls")
 public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
 
+    @SuppressWarnings("null")
     private HttpClient       client;
+    @SuppressWarnings("null")
     private MockServerClient mockServer;
 
     /**

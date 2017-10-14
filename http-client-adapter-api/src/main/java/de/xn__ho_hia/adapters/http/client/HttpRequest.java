@@ -10,6 +10,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Executor;
 
+import org.eclipse.jdt.annotation.Checks;
+
 /**
  * Represents a fully configured HTTP request, ready to be executed.
  * <p>
@@ -35,7 +37,8 @@ public interface HttpRequest {
      * @return A {@link CompletionStage} for async processing.
      */
     default CompletionStage<HttpResponse> executeInPool(final Executor executor) {
-        return CompletableFuture.supplyAsync(this::executeOnCallingThread, executor);
+        return Checks.requireNonNull(CompletableFuture
+                .supplyAsync(this::executeOnCallingThread, executor));
     }
 
 }

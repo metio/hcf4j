@@ -6,8 +6,12 @@
  */
 package de.xn__ho_hia.adapters.http.client.okhttp3;
 
+import static org.eclipse.jdt.annotation.Checks.requireNonNull;
+
 import java.util.Locale;
 import java.util.function.Function;
+
+import org.eclipse.jdt.annotation.Nullable;
 
 import ch.qos.cal10n.IMessageConveyor;
 import ch.qos.cal10n.MessageConveyor;
@@ -19,9 +23,9 @@ import okhttp3.OkHttpClient;
 
 final class OkHttp3HttpClientFactory implements HttpClientFactory {
 
-    private OkHttpClient                client;
-    private Function<String, MediaType> mediaTypeCreator;
-    private IMessageConveyor            messages;
+    private @Nullable OkHttpClient                client;
+    private @Nullable Function<String, MediaType> mediaTypeCreator;
+    private @Nullable IMessageConveyor            messages;
 
     @Override
     public HttpClient buildHttpClient() {
@@ -34,13 +38,17 @@ final class OkHttp3HttpClientFactory implements HttpClientFactory {
         if (messages == null) {
             rebuildMessageConveyor();
         }
-        return new OkHttp3HttpClientAdapter(client, mediaTypeCreator, messages);
+        return new OkHttp3HttpClientAdapter(
+                requireNonNull(client),
+                requireNonNull(mediaTypeCreator),
+                requireNonNull(messages));
     }
 
     private void rebuildClient() {
         client = new OkHttpClient();
     }
 
+    @SuppressWarnings("null")
     private void rebuildMediaTypeCreator() {
         mediaTypeCreator = MapMemoize.function(MediaType::parse);
     }

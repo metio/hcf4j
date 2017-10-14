@@ -25,6 +25,7 @@ import de.xn__ho_hia.adapters.http.client.exception.HttpRequestException;
 public abstract class InvalidUrlTCK implements HttpClientTCK {
 
     @TestFactory
+    @SuppressWarnings("null")
     Stream<DynamicTest> invalidUrls() {
         final HttpClient httpClient = createHttpClient();
         return Stream.of(

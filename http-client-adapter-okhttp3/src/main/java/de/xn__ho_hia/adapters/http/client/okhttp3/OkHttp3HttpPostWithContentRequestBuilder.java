@@ -6,6 +6,8 @@
  */
 package de.xn__ho_hia.adapters.http.client.okhttp3;
 
+import org.eclipse.jdt.annotation.Checks;
+
 import de.xn__ho_hia.adapters.http.client.HttpRequest;
 import de.xn__ho_hia.adapters.http.client.builder.HttpPostWithContentRequestBuilder;
 import okhttp3.MediaType;
@@ -30,7 +32,7 @@ final class OkHttp3HttpPostWithContentRequestBuilder extends AbstractOkHttp3Adap
         final RequestBody body = RequestBody.create(okHttpMediaType, content);
         final Builder post = requestBuilder.post(body);
 
-        return new OkHttp3HttpRequestAdapter(this, post);
+        return new OkHttp3HttpRequestAdapter(this, Checks.requireNonNull(post));
     }
 
 }

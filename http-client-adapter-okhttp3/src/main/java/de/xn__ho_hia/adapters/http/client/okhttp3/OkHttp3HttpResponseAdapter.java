@@ -6,6 +6,8 @@
  */
 package de.xn__ho_hia.adapters.http.client.okhttp3;
 
+import org.eclipse.jdt.annotation.Checks;
+
 import de.xn__ho_hia.adapters.http.client.HttpResponse;
 
 final class OkHttp3HttpResponseAdapter implements HttpResponse {
@@ -18,7 +20,7 @@ final class OkHttp3HttpResponseAdapter implements HttpResponse {
 
     @Override
     public String getBodyContent() {
-        return bodyContent;
+        return Checks.requireNonEmpty(bodyContent);
     }
 
 }

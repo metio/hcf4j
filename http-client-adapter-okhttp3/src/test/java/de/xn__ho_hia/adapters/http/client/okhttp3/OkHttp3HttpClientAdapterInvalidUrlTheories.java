@@ -27,6 +27,7 @@ import de.xn__ho_hia.adapters.http.client.exception.HttpRequestException;
  *
  */
 @RunWith(Theories.class)
+@SuppressWarnings("null")
 public class OkHttp3HttpClientAdapterInvalidUrlTheories {
 
     /**
@@ -34,7 +35,7 @@ public class OkHttp3HttpClientAdapterInvalidUrlTheories {
      */
     @SuppressWarnings("nls")
     @DataPoints("urls")
-    public static List<String> INVALID_URLS = Arrays.asList(
+    public static List<String>              INVALID_URLS    = Arrays.asList(
             null,
             "",
             "abc",
@@ -59,7 +60,7 @@ public class OkHttp3HttpClientAdapterInvalidUrlTheories {
      *
      */
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    public ExpectedException                thrown          = ExpectedException.none();
 
     /**
      * @param url

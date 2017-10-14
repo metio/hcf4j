@@ -23,6 +23,7 @@ public class OkHttp3TestMother {
     /**
      *
      */
+    @SuppressWarnings("null")
     public static final HttpClient OkHttp3_HTTP_CLIENT = new OkHttp3HttpClientAdapter(
             new OkHttpClient(), MapMemoize.function(MediaType::parse), new MessageConveyor(Locale.ENGLISH));
 

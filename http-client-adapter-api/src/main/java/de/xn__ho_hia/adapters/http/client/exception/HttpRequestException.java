@@ -15,6 +15,13 @@ public final class HttpRequestException extends RuntimeException {
     private static final long serialVersionUID = 8880626795092004381L;
 
     /**
+     * Default constructor w/o any data
+     */
+    public HttpRequestException() {
+        super();
+    }
+
+    /**
      * @param throwable
      *            The exception to wrap.
      */

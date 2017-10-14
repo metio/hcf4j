@@ -4,18 +4,8 @@
  * including this file, may be copied, modified, propagated, or distributed except according to the terms contained
  * in the LICENSE file.
  */
-package de.xn__ho_hia.adapters.http.client.factory;
-
-import de.xn__ho_hia.adapters.http.client.HttpClient;
-
 /**
- * Factory that builds {@link HttpClient}s.
+ * HTTP error codes
  */
-public interface HttpClientFactory {
-
-    /**
-     * @return A newly or re-used {@link HttpClient}.
-     */
-    HttpClient buildHttpClient();
-
-}
+@org.eclipse.jdt.annotation.NonNullByDefault
+package de.xn__ho_hia.adapters.http.client.errors;

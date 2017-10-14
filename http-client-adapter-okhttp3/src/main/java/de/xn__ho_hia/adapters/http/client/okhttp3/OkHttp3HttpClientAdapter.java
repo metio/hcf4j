@@ -11,6 +11,8 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import org.eclipse.jdt.annotation.Checks;
+
 import ch.qos.cal10n.IMessageConveyor;
 import de.xn__ho_hia.adapters.http.client.HttpClient;
 import de.xn__ho_hia.adapters.http.client.builder.HttpGetRequestBuilder;
@@ -39,7 +41,8 @@ final class OkHttp3HttpClientAdapter implements HttpClient {
 
     @Override
     public HttpGetRequestBuilder get(final String url) {
-        return new OkHttp3HttpRequestAdapter(client, mediaTypeCreator, messages, url(url).get());
+        return new OkHttp3HttpRequestAdapter(client, mediaTypeCreator, messages,
+                Checks.requireNonNull(url(url).get()));
     }
 
     @Override
@@ -61,11 +64,12 @@ final class OkHttp3HttpClientAdapter implements HttpClient {
     }
 
     private static Request.Builder builder(final String url) {
-        return new Request.Builder().url(url);
+        return Checks.requireNonNull(new Request.Builder().url(url));
     }
 
     private Supplier<HttpRequestException> httpRequestException(final String url) {
-        return () -> new HttpRequestException(messages.getMessage(UrlErrors.INVALID_URL, url));
+        return () -> new HttpRequestException(Checks.requireNonEmpty(
+                messages.getMessage(UrlErrors.INVALID_URL, url)));
     }
 
 }
