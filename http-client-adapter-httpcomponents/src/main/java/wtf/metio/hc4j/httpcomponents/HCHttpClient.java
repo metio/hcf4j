@@ -6,58 +6,63 @@
  */
 package wtf.metio.hc4j.httpcomponents;
 
+import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hc4j.HttpClient;
 import wtf.metio.hc4j.builder.HttpGetRequestBuilder;
 import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
 
 final class HCHttpClient implements HttpClient {
 
-  @Override
-  public HttpGetRequestBuilder get(String url) {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    private final IMessageConveyor messages;
 
-  @Override
-  public HttpPostRequestBuilder post(String url) {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    HCHttpClient(final IMessageConveyor messages) {
+        this.messages = messages;
+    }
 
-  @Override
-  public void head(String url) {
-    // TODO Auto-generated method stub
+    @Override
+    public HttpGetRequestBuilder get(final String url) {
+        return new HCHttpGetRequestBuilder();
+    }
 
-  }
+    @Override
+    public HttpPostRequestBuilder post(final String url) {
+        return new HCHttpPostRequestBuilder(messages);
+    }
 
-  @Override
-  public void put(String url) {
-    // TODO Auto-generated method stub
+    @Override
+    public void head(final String url) {
+        // TODO Auto-generated method stub
 
-  }
+    }
 
-  @Override
-  public void delete(String url) {
-    // TODO Auto-generated method stub
+    @Override
+    public void put(final String url) {
+        // TODO Auto-generated method stub
 
-  }
+    }
 
-  @Override
-  public void connect(String url) {
-    // TODO Auto-generated method stub
+    @Override
+    public void delete(final String url) {
+        // TODO Auto-generated method stub
 
-  }
+    }
 
-  @Override
-  public void trace(String url) {
-    // TODO Auto-generated method stub
+    @Override
+    public void connect(final String url) {
+        // TODO Auto-generated method stub
 
-  }
+    }
 
-  @Override
-  public void patch(String url) {
-    // TODO Auto-generated method stub
+    @Override
+    public void trace(final String url) {
+        // TODO Auto-generated method stub
 
-  }
+    }
+
+    @Override
+    public void patch(final String url) {
+        // TODO Auto-generated method stub
+
+    }
 
 }
