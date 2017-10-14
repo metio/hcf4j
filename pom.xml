@@ -29,13 +29,13 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>hc4j-api</module>
-    <module>hc4j-errorcodes</module>
-    <module>hc4j-tck</module>
-    <module>hc4j-shared</module>
-    <module>hc4j-okhttp3</module>
-    <module>hc4j-httpclient</module>
-    <module>hc4j-fluent-hc</module>
+    <module>hcf4j-api</module>
+    <module>hcf4j-errorcodes</module>
+    <module>hcf4j-tck</module>
+    <module>hcf4j-shared</module>
+    <module>hcf4j-okhttp3</module>
+    <module>hcf4j-httpclient</module>
+    <module>hcf4j-fluent-hc</module>
   </modules>
 
   <dependencies>

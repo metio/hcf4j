@@ -8,6 +8,23 @@ image:https://www.openhub.net/p/http-client-adapter/widgets/project_thin_badge.g
 
 Provides an abstraction over the various HTTP client implementations in Java.
 
+== Usage
+
+----
+// decide implementation by choosing a specific factory
+HttpClientFactory factory = new OkHttp3HttpClientFactory();
+
+// fine tune w/ builder
+HttpClient httpClient = factory.buildHttpClient();
+
+// blocking & non-blocking requests
+HttpResponse response = httpClient.get("http://example.com").executeOnCallingThread();
+
+// inspect responses
+String responseBody = response.getBody();
+int statusCode = response.getStatusCode();
+----
+
 == License
 
 To the extent possible under law, the author(s) have dedicated all copyright
