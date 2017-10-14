@@ -8,6 +8,7 @@ package wtf.metio.hc4j.httpcomponents;
 
 import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hc4j.HttpClient;
+import wtf.metio.hc4j.factory.HttpClientBuilder;
 import wtf.metio.hc4j.factory.HttpClientFactory;
 
 final class HCHttpClientFactory implements HttpClientFactory {
@@ -21,6 +22,11 @@ final class HCHttpClientFactory implements HttpClientFactory {
     @Override
     public HttpClient buildHttpClient() {
         return new HCHttpClient(messages);
+    }
+
+    @Override
+    public HttpClientBuilder client() {
+        return new HCHttpClientBuilder(messages);
     }
 
 }

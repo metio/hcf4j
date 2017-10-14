@@ -14,8 +14,13 @@ import wtf.metio.hc4j.HttpClient;
 public interface HttpClientFactory {
 
     /**
-     * @return A newly or re-used {@link HttpClient}.
+     * @return A newly created or re-used {@link HttpClient}.
      */
     HttpClient buildHttpClient();
+
+    /**
+     * @return A builder to fine-tune a new {@link HttpClient}.
+     */
+    HttpClientBuilder client();
 
 }
