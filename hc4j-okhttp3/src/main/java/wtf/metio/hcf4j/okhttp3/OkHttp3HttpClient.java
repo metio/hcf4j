@@ -18,11 +18,11 @@ import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.builder.HttpGetRequestBuilder;
-import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
-import wtf.metio.hc4j.errors.UrlErrors;
-import wtf.metio.hc4j.exception.HttpRequestException;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
+import wtf.metio.hcf4j.errors.UrlErrors;
+import wtf.metio.hcf4j.exception.HttpRequestException;
 
 final class OkHttp3HttpClient implements HttpClient {
 

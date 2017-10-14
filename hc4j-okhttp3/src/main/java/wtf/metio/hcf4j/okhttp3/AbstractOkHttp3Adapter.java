@@ -12,7 +12,7 @@ import ch.qos.cal10n.IMessageConveyor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request.Builder;
-import wtf.metio.hc4j.shared.AbstractHttpClientAdapter;
+import wtf.metio.hcf4j.shared.AbstractHttpClientAdapter;
 
 abstract class AbstractOkHttp3Adapter extends AbstractHttpClientAdapter<OkHttpClient, MediaType> {
 

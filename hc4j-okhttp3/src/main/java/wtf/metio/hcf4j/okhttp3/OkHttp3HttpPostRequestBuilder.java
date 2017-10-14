@@ -12,8 +12,8 @@ import ch.qos.cal10n.IMessageConveyor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request.Builder;
-import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
-import wtf.metio.hc4j.builder.HttpPostWithContentRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpPostWithContentRequestBuilder;
 
 final class OkHttp3HttpPostRequestBuilder extends AbstractOkHttp3Adapter implements HttpPostRequestBuilder {
 

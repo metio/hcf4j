@@ -7,9 +7,9 @@
 package wtf.metio.hcf4j.httpclient;
 
 import ch.qos.cal10n.IMessageConveyor;
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.factory.HttpClientBuilder;
-import wtf.metio.hc4j.factory.HttpClientFactory;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.factory.HttpClientBuilder;
+import wtf.metio.hcf4j.factory.HttpClientFactory;
 
 final class HCHttpClientFactory implements HttpClientFactory {
 

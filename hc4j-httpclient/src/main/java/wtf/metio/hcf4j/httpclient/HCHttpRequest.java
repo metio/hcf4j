@@ -16,10 +16,10 @@ import org.apache.http.util.EntityUtils;
 import org.eclipse.jdt.annotation.Checks;
 
 import ch.qos.cal10n.IMessageConveyor;
-import wtf.metio.hc4j.HttpRequest;
-import wtf.metio.hc4j.HttpResponse;
-import wtf.metio.hc4j.errors.ConnectionErrors;
-import wtf.metio.hc4j.exception.HttpRequestException;
+import wtf.metio.hcf4j.HttpRequest;
+import wtf.metio.hcf4j.HttpResponse;
+import wtf.metio.hcf4j.errors.ConnectionErrors;
+import wtf.metio.hcf4j.exception.HttpRequestException;
 
 final class HCHttpRequest implements HttpRequest {
 

@@ -20,7 +20,7 @@ import org.junit.experimental.theories.Theory;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
-import wtf.metio.hc4j.exception.HttpRequestException;
+import wtf.metio.hcf4j.exception.HttpRequestException;
 
 /**
  *

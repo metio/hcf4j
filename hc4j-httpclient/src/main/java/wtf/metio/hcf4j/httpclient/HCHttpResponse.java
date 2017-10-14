@@ -6,7 +6,7 @@
  */
 package wtf.metio.hcf4j.httpclient;
 
-import wtf.metio.hc4j.HttpResponse;
+import wtf.metio.hcf4j.HttpResponse;
 
 final class HCHttpResponse implements HttpResponse {
 

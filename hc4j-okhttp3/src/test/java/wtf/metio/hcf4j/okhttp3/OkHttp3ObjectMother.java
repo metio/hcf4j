@@ -6,9 +6,8 @@
  */
 package wtf.metio.hcf4j.okhttp3;
 
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.factory.HttpClientFactory;
-import wtf.metio.hcf4j.okhttp3.OkHttp3HttpClientFactory;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.factory.HttpClientFactory;
 
 /**
  * Object Mother for OkHttp 3 based tests.

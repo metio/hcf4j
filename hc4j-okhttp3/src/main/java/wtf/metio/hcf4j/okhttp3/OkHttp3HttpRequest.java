@@ -19,13 +19,13 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request.Builder;
 import okhttp3.Response;
-import wtf.metio.hc4j.HttpResponse;
-import wtf.metio.hc4j.builder.HttpGetRequestBuilder;
-import wtf.metio.hc4j.errors.ConnectionErrors;
-import wtf.metio.hc4j.errors.EncodingErrors;
-import wtf.metio.hc4j.errors.ThirdPartyErrors;
-import wtf.metio.hc4j.exception.HttpRequestException;
-import wtf.metio.hc4j.exception.HttpResponseException;
+import wtf.metio.hcf4j.HttpResponse;
+import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
+import wtf.metio.hcf4j.errors.ConnectionErrors;
+import wtf.metio.hcf4j.errors.EncodingErrors;
+import wtf.metio.hcf4j.errors.ThirdPartyErrors;
+import wtf.metio.hcf4j.exception.HttpRequestException;
+import wtf.metio.hcf4j.exception.HttpResponseException;
 
 final class OkHttp3HttpRequest extends AbstractOkHttp3Adapter implements HttpGetRequestBuilder {
 

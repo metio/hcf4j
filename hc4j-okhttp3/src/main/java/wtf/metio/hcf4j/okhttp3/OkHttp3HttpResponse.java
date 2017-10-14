@@ -8,7 +8,7 @@ package wtf.metio.hcf4j.okhttp3;
 
 import org.eclipse.jdt.annotation.Checks;
 
-import wtf.metio.hc4j.HttpResponse;
+import wtf.metio.hcf4j.HttpResponse;
 
 final class OkHttp3HttpResponse implements HttpResponse {
 

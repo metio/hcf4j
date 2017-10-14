@@ -6,9 +6,9 @@
  */
 package wtf.metio.hcf4j.okhttp3;
 
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.factory.HttpClientBuilder;
-import wtf.metio.hc4j.factory.HttpClientFactory;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.factory.HttpClientBuilder;
+import wtf.metio.hcf4j.factory.HttpClientFactory;
 
 final class OkHttp3HttpClientFactory implements HttpClientFactory {
 

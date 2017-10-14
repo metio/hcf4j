@@ -4,8 +4,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.eclipse.jdt.annotation.Checks;
 
 import ch.qos.cal10n.IMessageConveyor;
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.factory.HttpClientBuilder;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.factory.HttpClientBuilder;
 
 final class HCHttpClientBuilder implements HttpClientBuilder {
 

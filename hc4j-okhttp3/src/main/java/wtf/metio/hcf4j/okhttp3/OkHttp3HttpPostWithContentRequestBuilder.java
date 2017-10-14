@@ -10,9 +10,9 @@ import org.eclipse.jdt.annotation.Checks;
 
 import okhttp3.MediaType;
 import okhttp3.Request.Builder;
-import wtf.metio.hc4j.HttpRequest;
-import wtf.metio.hc4j.builder.HttpPostWithContentRequestBuilder;
 import okhttp3.RequestBody;
+import wtf.metio.hcf4j.HttpRequest;
+import wtf.metio.hcf4j.builder.HttpPostWithContentRequestBuilder;
 
 final class OkHttp3HttpPostWithContentRequestBuilder extends AbstractOkHttp3Adapter
         implements HttpPostWithContentRequestBuilder {

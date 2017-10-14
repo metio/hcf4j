@@ -10,10 +10,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockserver.client.server.MockServerClient;
 
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.HttpResponse;
-import wtf.metio.hc4j.builder.HttpGetRequestBuilder;
-import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.HttpResponse;
+import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 
 /**
  *

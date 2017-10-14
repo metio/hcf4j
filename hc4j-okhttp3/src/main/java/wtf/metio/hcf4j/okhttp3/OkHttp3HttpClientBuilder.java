@@ -12,8 +12,8 @@ import ch.qos.cal10n.MessageConveyor;
 import de.xn__ho_hia.memoization.map.MapMemoize;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.factory.HttpClientBuilder;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.factory.HttpClientBuilder;
 
 final class OkHttp3HttpClientBuilder implements HttpClientBuilder {
 
