@@ -12,17 +12,17 @@ import wtf.metio.hc4j.HttpResponse;
 
 final class OkHttp3HttpResponseAdapter implements HttpResponse {
 
-    private final String bodyContent;
+    private final String body;
     private final int    statusCode;
 
-    OkHttp3HttpResponseAdapter(final String bodyContent, final int statusCode) {
-        this.bodyContent = bodyContent;
+    OkHttp3HttpResponseAdapter(final String body, final int statusCode) {
+        this.body = body;
         this.statusCode = statusCode;
     }
 
     @Override
-    public String getBodyContent() {
-        return Checks.requireNonEmpty(bodyContent);
+    public String getBody() {
+        return Checks.requireNonEmpty(body);
     }
 
     @Override

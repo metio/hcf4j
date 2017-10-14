@@ -16,7 +16,7 @@ public interface HttpResponse {
     /**
      * @return The response body as a {@link String}.
      */
-    String getBodyContent();
+    String getBody();
 
     /**
      * @return The HTTP status code of the response.

@@ -4,17 +4,17 @@ import wtf.metio.hc4j.HttpResponse;
 
 final class HCHttpResponse implements HttpResponse {
 
-  private String bodyContent;
+  private String body;
   private int    statusCode;
 
-  public HCHttpResponse(String bodyContent, int statusCode) {
-    this.bodyContent = bodyContent;
+  public HCHttpResponse(String body, int statusCode) {
+    this.body = body;
     this.statusCode = statusCode;
   }
 
   @Override
-  public String getBodyContent() {
-    return bodyContent;
+  public String getBody() {
+    return body;
   }
 
   @Override

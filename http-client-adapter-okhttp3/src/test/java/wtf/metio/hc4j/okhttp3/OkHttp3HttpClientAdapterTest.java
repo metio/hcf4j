@@ -83,7 +83,7 @@ public class OkHttp3HttpClientAdapterTest extends AbstractMockHttpTest {
         final HttpResponse response = client.get(path("/test")).executeOnCallingThread();
 
         // then
-        Assert.assertEquals("test", response.getBodyContent());
+        Assert.assertEquals("test", response.getBody());
         Assert.assertEquals(200, response.getStatusCode());
     }
 
