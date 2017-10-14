@@ -6,14 +6,25 @@
  */
 package wtf.metio.hc4j.httpclient;
 
+import org.apache.http.client.HttpClient;
+
+import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hc4j.HttpResponse;
 import wtf.metio.hc4j.builder.HttpGetRequestBuilder;
 
 final class HCHttpGetRequestBuilder implements HttpGetRequestBuilder {
 
+    private final HttpClient       httpClient;
+    private final IMessageConveyor messages;
+
+    public HCHttpGetRequestBuilder(final HttpClient httpClient, final IMessageConveyor messages) {
+        this.httpClient = httpClient;
+        this.messages = messages;
+    }
+
     @Override
     public HttpResponse executeOnCallingThread() {
-        return new HCHttpResponse("TODO", 0); //$NON-NLS-1$
+        return new HCHttpRequest(httpClient, messages).executeOnCallingThread();
     }
 
 }

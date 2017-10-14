@@ -6,21 +6,25 @@
  */
 package wtf.metio.hc4j.httpclient;
 
+import org.apache.http.client.HttpClient;
+
 import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hc4j.HttpRequest;
 import wtf.metio.hc4j.builder.HttpPostWithContentRequestBuilder;
 
 final class HCHttpPostWithContentRequestBuilder implements HttpPostWithContentRequestBuilder {
 
+    private final HttpClient       httpClient;
     private final IMessageConveyor messages;
 
-    HCHttpPostWithContentRequestBuilder(final IMessageConveyor messages) {
+    HCHttpPostWithContentRequestBuilder(final HttpClient httpClient, final IMessageConveyor messages) {
+        this.httpClient = httpClient;
         this.messages = messages;
     }
 
     @Override
     public HttpRequest mediaType(final String mediaType) {
-        return new HCHttpRequest(messages);
+        return new HCHttpRequest(httpClient, messages);
     }
 
 }

@@ -21,7 +21,7 @@ final class HCHttpClientFactory implements HttpClientFactory {
 
     @Override
     public HttpClient buildHttpClient() {
-        return new HCHttpClient(messages);
+        return client().buildHttpClient();
     }
 
     @Override

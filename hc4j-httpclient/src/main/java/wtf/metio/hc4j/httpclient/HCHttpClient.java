@@ -6,6 +6,8 @@
  */
 package wtf.metio.hc4j.httpclient;
 
+import org.apache.http.impl.client.CloseableHttpClient;
+
 import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hc4j.HttpClient;
 import wtf.metio.hc4j.builder.HttpGetRequestBuilder;
@@ -13,20 +15,24 @@ import wtf.metio.hc4j.builder.HttpPostRequestBuilder;
 
 final class HCHttpClient implements HttpClient {
 
-    private final IMessageConveyor messages;
+    private final CloseableHttpClient httpClient;
+    private final IMessageConveyor    messages;
 
-    HCHttpClient(final IMessageConveyor messages) {
+    HCHttpClient(
+            final CloseableHttpClient httpClient,
+            final IMessageConveyor messages) {
+        this.httpClient = httpClient;
         this.messages = messages;
     }
 
     @Override
     public HttpGetRequestBuilder get(final String url) {
-        return new HCHttpGetRequestBuilder();
+        return new HCHttpGetRequestBuilder(httpClient, messages);
     }
 
     @Override
     public HttpPostRequestBuilder post(final String url) {
-        return new HCHttpPostRequestBuilder(messages);
+        return new HCHttpPostRequestBuilder(httpClient, messages);
     }
 
     @Override
