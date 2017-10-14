@@ -53,8 +53,8 @@ public class OkHttp3HttpClientAdapterInvalidUrlTheories {
      */
     @DataPoints("methods")
     public static List<Function<String, ?>> REQUEST_METHODS = Arrays.asList(
-            OkHttp3TestMother.OkHttp3_HTTP_CLIENT::get,
-            OkHttp3TestMother.OkHttp3_HTTP_CLIENT::post);
+            OkHttp3ObjectMother.CLIENT::get,
+            OkHttp3ObjectMother.CLIENT::post);
 
     /**
      *

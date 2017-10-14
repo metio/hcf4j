@@ -33,7 +33,7 @@ public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
      */
     @Before
     public void setUp() {
-        client = OkHttp3TestMother.OkHttp3_HTTP_CLIENT;
+        client = OkHttp3ObjectMother.CLIENT;
     }
 
     /**
