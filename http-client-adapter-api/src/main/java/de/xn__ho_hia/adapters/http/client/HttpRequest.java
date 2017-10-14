@@ -11,17 +11,25 @@ import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Executor;
 
 /**
+ * Represents a fully configured HTTP request, ready to be executed.
+ * <p>
+ * There are two ways to execute a request: {@link #executeOnCallingThread() blocking} and
+ * {@link #executeInPool(Executor) non-blocking}. Both result in a {@link HttpResponse}.
  *
- *
+ * @see HttpResponse
  */
 public interface HttpRequest {
 
     /**
+     * Performs a <strong>blocking</strong> HTTP request.
+     *
      * @return The response once it arrives.
      */
     HttpResponse executeOnCallingThread();
 
     /**
+     * Performs a <strong>non-blocking</strong> HTTP request.
+     *
      * @param executor
      *            The {@link Executor} to use.
      * @return A {@link CompletionStage} for async processing.

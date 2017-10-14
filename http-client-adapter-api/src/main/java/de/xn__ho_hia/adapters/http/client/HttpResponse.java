@@ -7,8 +7,9 @@
 package de.xn__ho_hia.adapters.http.client;
 
 /**
+ * Represents the server response received after sending a {@link HttpRequest}.
  *
- *
+ * @see HttpRequest
  */
 public interface HttpResponse {
 

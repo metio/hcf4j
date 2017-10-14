@@ -10,8 +10,7 @@ import de.xn__ho_hia.adapters.http.client.builder.HttpGetRequestBuilder;
 import de.xn__ho_hia.adapters.http.client.builder.HttpPostRequestBuilder;
 
 /**
- *
- *
+ * Starting interface for HTTP client actions.
  */
 public interface HttpClient {
 
