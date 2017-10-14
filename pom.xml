@@ -26,16 +26,16 @@
   <groupId>wtf.metio.hc4j</groupId>
   <artifactId>hc4j</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>HTTP Client Adapter for Java</name>
   <packaging>pom</packaging>
 
   <modules>
-    <module>http-client-adapter-api</module>
-    <module>http-client-adapter-errorcodes</module>
-    <module>http-client-adapter-tck</module>
-    <module>http-client-adapter-shared</module>
-    <module>http-client-adapter-okhttp3</module>
-    <module>http-client-adapter-httpcomponents</module>
+    <module>hc4j-api</module>
+    <module>hc4j-errorcodes</module>
+    <module>hc4j-tck</module>
+    <module>hc4j-shared</module>
+    <module>hc4j-okhttp3</module>
+    <module>hc4j-httpclient</module>
+    <module>hc4j-fluent-hc</module>
   </modules>
 
   <dependencies>
@@ -51,4 +51,6 @@
     </dependency>
   </dependencies>
 
+  <description>HTTP Client Adapter for Java</description>
+  <name>hc4j</name>
 </project>
