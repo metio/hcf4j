@@ -5,7 +5,7 @@
  * in the LICENSE file.
  */
 /**
- * HTTP client adapter for Java
+ * HTTP client adapter for Java (hc4j)
  */
 @org.eclipse.jdt.annotation.NonNullByDefault
 package de.xn__ho_hia.adapters.http.client;
