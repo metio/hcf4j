@@ -23,8 +23,8 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <!--                               INFORMATIONS                              -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <groupId>wtf.metio.hc4j</groupId>
-  <artifactId>hc4j</artifactId>
+  <groupId>wtf.metio.hcf4j</groupId>
+  <artifactId>hcf4j</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -51,6 +51,6 @@
     </dependency>
   </dependencies>
 
-  <description>HTTP Client Adapter for Java</description>
-  <name>hc4j</name>
+  <description>HTTP Client Facade for Java</description>
+  <name>hcf4j</name>
 </project>

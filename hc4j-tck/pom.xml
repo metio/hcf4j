@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>wtf.metio.hc4j</groupId>
-    <artifactId>hc4j</artifactId>
+    <groupId>wtf.metio.hcf4j</groupId>
+    <artifactId>hcf4j</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>hc4j-tck</artifactId>
-  <name>hc4j :: TCK</name>
+  <artifactId>hcf4j-tck</artifactId>
+  <name>hcf4j :: TCK</name>
 
   <dependencies>
     <dependency>

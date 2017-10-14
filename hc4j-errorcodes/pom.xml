@@ -2,12 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>wtf.metio.hc4j</groupId>
-    <artifactId>hc4j</artifactId>
+    <groupId>wtf.metio.hcf4j</groupId>
+    <artifactId>hcf4j</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>hc4j-errorcodes</artifactId>
-  <name>hc4j :: Error Codes</name>
+  <artifactId>hcf4j-errorcodes</artifactId>
+  <name>hcf4j :: Error Codes</name>
 
 </project>
