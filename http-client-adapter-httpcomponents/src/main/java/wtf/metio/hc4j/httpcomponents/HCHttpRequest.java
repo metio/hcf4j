@@ -32,7 +32,7 @@ final class HCHttpRequest implements HttpRequest {
         .add(new RequestContent())
         .add(new RequestTargetHost())
         .add(new RequestConnControl())
-        .add(new RequestUserAgent("Test/1.1"))
+        .add(new RequestUserAgent("hc4j/99999-SNAPSHOT"))
         .add(new RequestExpectContinue(true)).build();
 
     HttpRequestExecutor httpexecutor = new HttpRequestExecutor();
