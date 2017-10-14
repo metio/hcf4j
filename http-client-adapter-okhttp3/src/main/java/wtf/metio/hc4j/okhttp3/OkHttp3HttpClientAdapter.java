@@ -72,4 +72,40 @@ final class OkHttp3HttpClientAdapter implements HttpClient {
                 messages.getMessage(UrlErrors.INVALID_URL, url)));
     }
 
+    @Override
+    public void head(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void put(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void delete(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void connect(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void trace(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void patch(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
 }

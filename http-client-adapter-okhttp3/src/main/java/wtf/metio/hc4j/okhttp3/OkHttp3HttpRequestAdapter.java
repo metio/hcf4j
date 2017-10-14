@@ -15,10 +15,8 @@ import java.util.function.Function;
 import org.eclipse.jdt.annotation.Checks;
 
 import ch.qos.cal10n.IMessageConveyor;
-import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.Request.Builder;
 import okhttp3.Response;
 import wtf.metio.hc4j.HttpResponse;
@@ -47,14 +45,10 @@ final class OkHttp3HttpRequestAdapter extends AbstractOkHttp3Adapter implements 
 
     @Override
     public HttpResponse executeOnCallingThread() {
-        try {
-            final Request request = requestBuilder.build();
-            final Call call = client.newCall(request);
-            try (final Response response = call.execute()) {
-                return new OkHttp3HttpResponseAdapter(
-                        requireNonNull(response.body().string()),
-                        response.code());
-            }
+        try (final Response response = client.newCall(requestBuilder.build()).execute()) {
+            return new OkHttp3HttpResponseAdapter(
+                    requireNonNull(response.body().string()),
+                    response.code());
         } catch (final UnsupportedEncodingException exception) {
             throw new HttpResponseException(Checks.requireNonEmpty(
                     messages.getMessage(EncodingErrors.INVALID_CHARSET)), exception);

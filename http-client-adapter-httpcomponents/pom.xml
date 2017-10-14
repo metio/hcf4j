@@ -1,12 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>wtf.metio.hc4j</groupId>
     <artifactId>hc4j</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>http-client-adapter-okhttp3</artifactId>
-  <name>HTTP Client Adapter for OkHttp 3</name>
+
+  <artifactId>http-client-adapter-httpcomponents</artifactId>
+  <name>HTTP Client Adapter for Apache HttpComponents</name>
 
   <dependencies>
     <dependency>
@@ -25,9 +27,10 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
-      <artifactId>okhttp</artifactId>
-    </dependency>
+       <groupId>org.apache.httpcomponents</groupId>
+       <artifactId>httpclient</artifactId>
+       <version>4.5.3</version>
+     </dependency>
      <dependency>
       <groupId>de.xn--ho-hia.memoization</groupId>
       <artifactId>memoization-core</artifactId>

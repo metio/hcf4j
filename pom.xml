@@ -32,13 +32,10 @@
   <modules>
     <module>http-client-adapter-api</module>
     <module>http-client-adapter-errorcodes</module>
-    <module>http-client-adapter-okhttp3</module>
-    <module>http-client-adapter-shared</module>
     <module>http-client-adapter-tck</module>
-    <!-- 
-    <module>http-client-adapter-okhttp2</module>
-    <module>http-client-adapter-httpclient</module>
-     -->
+    <module>http-client-adapter-shared</module>
+    <module>http-client-adapter-okhttp3</module>
+    <module>http-client-adapter-httpcomponents</module>
   </modules>
 
   <dependencies>

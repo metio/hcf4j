@@ -24,8 +24,44 @@ public interface HttpClient {
     /**
      * @param url
      *            The target URL.
+     */
+    void head(String url);
+
+    /**
+     * @param url
+     *            The target URL.
      * @return A request builder to further configure the POST request.
      */
     HttpPostRequestBuilder post(String url);
+
+    /**
+     * @param url
+     *            The target URL.
+     */
+    void put(String url);
+
+    /**
+     * @param url
+     *            The target URL.
+     */
+    void delete(String url);
+
+    /**
+     * @param url
+     *            The target URL.
+     */
+    void connect(String url);
+
+    /**
+     * @param url
+     *            The target URL.
+     */
+    void trace(String url);
+
+    /**
+     * @param url
+     *            The target URL.
+     */
+    void patch(String url);
 
 }
