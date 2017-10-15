@@ -33,6 +33,7 @@ final class HCHttpRequest implements HttpRequest {
 
     @Override
     public HttpResponse executeOnCallingThread() {
+        // see https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html
         try {
             final HttpGet httpGet = new HttpGet("http://targethost/homepage"); //$NON-NLS-1$
             final org.apache.http.HttpResponse response = httpClient.execute(httpGet);
