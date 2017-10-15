@@ -20,4 +20,10 @@ final class HCHttpClientBuilder implements HttpClientBuilder {
         return new HCHttpClient(Checks.requireNonNull(HttpClients.createDefault()), messages);
     }
 
+    @Override
+    public HttpClientBuilder userAgent(final String userAgent) {
+        // TODO: save user agent for later usage
+        return this;
+    }
+
 }

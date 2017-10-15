@@ -15,7 +15,9 @@ Provides an abstraction over the various HTTP client implementations in Java.
 HttpClientFactory factory = new OkHttp3HttpClientFactory();
 
 // fine tune w/ builder
-HttpClient httpClient = factory.buildHttpClient();
+HttpClient httpClient = factory
+    .userAgent("my-awesome/client 1.2.3")
+    .buildHttpClient();
 
 // blocking request
 HttpResponse response = httpClient.get("http://example.com")

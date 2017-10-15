@@ -51,4 +51,10 @@ final class OkHttp3HttpClientBuilder implements HttpClientBuilder {
         messages = new MessageConveyor(Locale.ENGLISH);
     }
 
+    @Override
+    public HttpClientBuilder userAgent(final String userAgent) {
+        // TODO: save user agent for later usage
+        return this;
+    }
+
 }
