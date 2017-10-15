@@ -16,7 +16,7 @@ public interface HttpClientFactory {
     /**
      * @return A newly created or re-used {@link HttpClient}.
      */
-    HttpClient buildHttpClient();
+    HttpClient build();
 
     /**
      * @return A builder to fine-tune a new {@link HttpClient}.

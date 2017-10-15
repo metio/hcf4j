@@ -29,7 +29,7 @@ public class OkHttp3ObjectMother {
     /**
      * Default OkHttp 3 based {@link HttpClient}.
      */
-    public static final HttpClient        CLIENT         = CLIENT_FACTORY.buildHttpClient();
+    public static final HttpClient        CLIENT         = CLIENT_FACTORY.build();
 
     /**
      * Default thread pool used during tests.

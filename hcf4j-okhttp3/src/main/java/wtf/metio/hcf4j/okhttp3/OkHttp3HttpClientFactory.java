@@ -13,7 +13,7 @@ import wtf.metio.hcf4j.factory.HttpClientFactory;
 final class OkHttp3HttpClientFactory implements HttpClientFactory {
 
     @Override
-    public HttpClient buildHttpClient() {
+    public HttpClient build() {
         return client().buildHttpClient();
     }
 

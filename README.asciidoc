@@ -16,8 +16,9 @@ HttpClientFactory factory = new OkHttp3HttpClientFactory();
 
 // fine tune w/ builder
 HttpClient httpClient = factory
+    .client()
     .userAgent("my-awesome/client 1.2.3")
-    .buildHttpClient();
+    .build();
 
 // blocking request
 HttpResponse response = httpClient.get("http://example.com")
