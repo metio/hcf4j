@@ -1,7 +1,7 @@
 = HTTP Client Facade for Java (hcf4j) image:https://img.shields.io/badge/email-%40metio-brightgreen.svg?style=social&label=mail["Discuss on Google Groups", link="https://groups.google.com/forum/#!forum/metio"] image:https://img.shields.io/badge/irc-%23metio.wtf-brightgreen.svg?style=social&label=IRC["Chat on IRC", link="http://webchat.freenode.net/?channels=metio.wtf"]
 Sebastian Hoß <http://seb.xn--ho-hia.de/[@sebhoss]>
 :github-org: sebhoss
-:project-name: http-client-adapter.java
+:project-name: hcf4j
 
 image:https://img.shields.io/badge/license-cc%20zero-000000.svg?style=flat-square["CC Zero", link="http://creativecommons.org/publicdomain/zero/1.0/"]
 image:https://www.openhub.net/p/http-client-adapter/widgets/project_thin_badge.gif["Open Hub statistics", link="https://www.openhub.net/p/http-client-adapter"]
