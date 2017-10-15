@@ -5,7 +5,7 @@
  * in the LICENSE file.
  */
 /**
- * HTTP client adapter for Java (hc4j)
+ * HTTP client facade for Java (hcf4j)
  */
 @org.eclipse.jdt.annotation.NonNullByDefault
 package wtf.metio.hcf4j;

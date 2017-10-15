@@ -15,8 +15,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 
-import wtf.metio.hc4j.HttpClient;
-import wtf.metio.hc4j.exception.HttpRequestException;
+import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.exception.HttpRequestException;
 
 /**
  * Verifies that invalid URLs are correctly handled.

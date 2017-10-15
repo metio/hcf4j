@@ -5,7 +5,7 @@
  * in the LICENSE file.
  */
 /**
- * HTTP client adapter for OkHttp3
+ * HTTP client facade adapter for OkHttp3
  */
 @org.eclipse.jdt.annotation.NonNullByDefault
 package wtf.metio.hcf4j.okhttp3;

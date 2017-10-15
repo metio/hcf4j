@@ -5,7 +5,7 @@
  * in the LICENSE file.
  */
 /**
- * Test compatibility kit (TCK) for HTTP clients and their adapters.
+ * Test compatibility kit (TCK) for HTTP clients and their facade adapters.
  */
 @org.eclipse.jdt.annotation.NonNullByDefault
 package wtf.metio.hcf4j.tck;

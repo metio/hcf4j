@@ -12,8 +12,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>wtf.metio.hc4j</groupId>
-      <artifactId>http-client-adapter-api</artifactId>
+      <groupId>wtf.metio.hcf4j</groupId>
+      <artifactId>hcf4j-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

@@ -5,7 +5,7 @@
  * in the LICENSE file.
  */
 /**
- * Shared code for HTTP client adapters
+ * Shared code for HTTP client facade adapters
  */
 @org.eclipse.jdt.annotation.NonNullByDefault
 package wtf.metio.hcf4j.shared;

@@ -6,7 +6,7 @@
  */
 package wtf.metio.hcf4j.tck;
 
-import wtf.metio.hc4j.HttpClient;
+import wtf.metio.hcf4j.HttpClient;
 
 /**
  * Most general contract for a {@link HttpClient}. Supposed to be extended and subclassed.
