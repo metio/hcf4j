@@ -6,6 +6,11 @@
  */
 package wtf.metio.hcf4j.okhttp3;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ForkJoinPool;
+
+import org.eclipse.jdt.annotation.Checks;
+
 import wtf.metio.hcf4j.HttpClient;
 import wtf.metio.hcf4j.factory.HttpClientFactory;
 
@@ -25,6 +30,11 @@ public class OkHttp3ObjectMother {
      * Default OkHttp 3 based {@link HttpClient}.
      */
     public static final HttpClient        CLIENT         = CLIENT_FACTORY.buildHttpClient();
+
+    /**
+     * Default thread pool used during tests.
+     */
+    public static final Executor          THREAD_POOL    = Checks.requireNonNull(ForkJoinPool.commonPool());
 
     private OkHttp3ObjectMother() {
         // utility class

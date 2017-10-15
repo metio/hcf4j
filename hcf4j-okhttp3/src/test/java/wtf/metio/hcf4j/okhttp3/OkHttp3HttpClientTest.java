@@ -78,4 +78,26 @@ public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
         Assert.assertEquals(200, response.getStatusCode());
     }
 
+    /**
+     *
+     */
+    @Test
+    public void shouldGetBodyContentAndStatusCodeNonBlocking() {
+        // given
+        mockServer.when(request()
+                .withPath("/test")
+                .withMethod("GET"))
+                .respond(response()
+                        .withStatusCode(Integer.valueOf(200))
+                        .withBody("test"));
+
+        // when
+        client.get(path("/test")).executeInPool(OkHttp3ObjectMother.THREAD_POOL)
+                .thenAccept(response -> {
+                    // then
+                    Assert.assertEquals("test", response.getBody());
+                    Assert.assertEquals(200, response.getStatusCode());
+                });
+    }
+
 }
