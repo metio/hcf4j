@@ -17,7 +17,7 @@
   <parent>
     <groupId>de.xn--ho-hia.maven.parents</groupId>
     <artifactId>maven-parents-java-prototype</artifactId>
-    <version>2017.10.15-192228</version>
+    <version>2017.10.15-193334</version>
   </parent>
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
