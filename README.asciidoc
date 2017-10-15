@@ -4,7 +4,7 @@ Sebastian Hoß <http://seb.xn--ho-hia.de/[@sebhoss]>
 :project-name: hcf4j
 
 image:https://img.shields.io/badge/license-cc%20zero-000000.svg?style=flat-square["CC Zero", link="http://creativecommons.org/publicdomain/zero/1.0/"]
-image:https://www.openhub.net/p/http-client-adapter/widgets/project_thin_badge.gif["Open Hub statistics", link="https://www.openhub.net/p/http-client-adapter"]
+image:https://www.openhub.net/p/hcf4j/widgets/project_thin_badge.gif["Open Hub statistics", link="https://www.openhub.net/p/hcf4j"]
 
 Provides an abstraction over the various HTTP client implementations in Java.
 
