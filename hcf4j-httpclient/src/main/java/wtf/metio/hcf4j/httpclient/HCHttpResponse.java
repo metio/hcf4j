@@ -19,12 +19,12 @@ final class HCHttpResponse implements HttpResponse {
     }
 
     @Override
-    public String getBody() {
+    public String body() {
         return body;
     }
 
     @Override
-    public int getStatusCode() {
+    public int statusCode() {
         return statusCode;
     }
 

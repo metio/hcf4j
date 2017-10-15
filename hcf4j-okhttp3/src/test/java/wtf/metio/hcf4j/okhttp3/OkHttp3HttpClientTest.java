@@ -74,8 +74,8 @@ public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
         final HttpResponse response = client.get(path("/test")).executeOnCallingThread();
 
         // then
-        Assert.assertEquals("test", response.getBody());
-        Assert.assertEquals(200, response.getStatusCode());
+        Assert.assertEquals("test", response.body());
+        Assert.assertEquals(200, response.statusCode());
     }
 
     /**
@@ -95,8 +95,8 @@ public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
         client.get(path("/test")).executeInPool(OkHttp3ObjectMother.THREAD_POOL)
                 .thenAccept(response -> {
                     // then
-                    Assert.assertEquals("test", response.getBody());
-                    Assert.assertEquals(200, response.getStatusCode());
+                    Assert.assertEquals("test", response.body());
+                    Assert.assertEquals(200, response.statusCode());
                 });
     }
 

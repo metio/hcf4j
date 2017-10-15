@@ -16,11 +16,11 @@ public interface HttpResponse {
     /**
      * @return The response body as a {@link String}.
      */
-    String getBody();
+    String body();
 
     /**
      * @return The HTTP status code of the response.
      */
-    int getStatusCode();
+    int statusCode();
 
 }

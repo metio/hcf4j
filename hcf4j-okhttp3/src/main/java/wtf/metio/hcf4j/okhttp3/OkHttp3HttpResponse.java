@@ -21,12 +21,12 @@ final class OkHttp3HttpResponse implements HttpResponse {
     }
 
     @Override
-    public String getBody() {
+    public String body() {
         return Checks.requireNonEmpty(body);
     }
 
     @Override
-    public int getStatusCode() {
+    public int statusCode() {
         return statusCode;
     }
 

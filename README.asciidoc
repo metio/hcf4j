@@ -26,8 +26,8 @@ CompletionStage<HttpResponse> responsePromise = httpClient.get("http://example.c
     .executeInPool(ForkJoinPool.commonPool());
 
 // inspect responses of blocking requests
-String responseBody = response.getBody();
-int statusCode = response.getStatusCode();
+String responseBody = response.body();
+int statusCode = response.statusCode();
 
 // handle non-blocking requests
 responsePromise
@@ -36,7 +36,7 @@ responsePromise
 // fluent api
 httpClient.get("http://example.com")
     .executeInPool(ForkJoinPool.commonPool())
-    .thenApply(HttpResponse::getBody)
+    .thenApply(HttpResponse::body)
     .thenAccept(System.out::println);
 ----
 
