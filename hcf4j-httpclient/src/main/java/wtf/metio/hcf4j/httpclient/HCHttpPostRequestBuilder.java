@@ -9,6 +9,7 @@ package wtf.metio.hcf4j.httpclient;
 import org.apache.http.client.HttpClient;
 
 import ch.qos.cal10n.IMessageConveyor;
+import wtf.metio.hcf4j.HttpRequest;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostWithContentRequestBuilder;
 
@@ -25,6 +26,11 @@ final class HCHttpPostRequestBuilder implements HttpPostRequestBuilder {
     @Override
     public HttpPostWithContentRequestBuilder content(final String content) {
         return new HCHttpPostWithContentRequestBuilder(httpClient, messages);
+    }
+
+    @Override
+    public HttpRequest emptyBody() {
+        return new HCHttpRequest(httpClient, messages);
     }
 
 }

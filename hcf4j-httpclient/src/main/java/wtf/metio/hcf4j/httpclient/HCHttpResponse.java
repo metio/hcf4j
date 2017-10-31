@@ -28,4 +28,9 @@ final class HCHttpResponse implements HttpResponse {
         return statusCode;
     }
 
+    @Override
+    public boolean isSuccess() {
+        return statusCode == 200;
+    }
+
 }

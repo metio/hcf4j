@@ -8,10 +8,14 @@ package wtf.metio.hcf4j.okhttp3;
 
 import java.util.function.Function;
 
+import org.eclipse.jdt.annotation.Checks;
+
 import ch.qos.cal10n.IMessageConveyor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request.Builder;
+import okhttp3.RequestBody;
+import wtf.metio.hcf4j.HttpRequest;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostWithContentRequestBuilder;
 
@@ -34,6 +38,14 @@ final class OkHttp3HttpPostRequestBuilder extends AbstractOkHttp3Adapter impleme
     @Override
     public HttpPostWithContentRequestBuilder content(final String content) {
         return new OkHttp3HttpPostWithContentRequestBuilder(this, content);
+    }
+
+    @Override
+    public HttpRequest emptyBody() {
+        final RequestBody body = RequestBody.create(null, new byte[0]);
+        final Builder post = requestBuilder.post(body);
+
+        return new OkHttp3HttpRequest(this, Checks.requireNonNull(post));
     }
 
 }

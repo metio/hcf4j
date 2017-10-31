@@ -10,7 +10,10 @@ import wtf.metio.hcf4j.HttpClient;
 import wtf.metio.hcf4j.factory.HttpClientBuilder;
 import wtf.metio.hcf4j.factory.HttpClientFactory;
 
-final class OkHttp3HttpClientFactory implements HttpClientFactory {
+/**
+ * OkHttp3 based HTTP client factory.
+ */
+public final class OkHttp3HttpClientFactory implements HttpClientFactory {
 
     @Override
     public HttpClient build() {

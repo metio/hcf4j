@@ -6,6 +6,8 @@
  */
 package wtf.metio.hcf4j.builder;
 
+import wtf.metio.hcf4j.HttpRequest;
+
 /**
  *
  *
@@ -18,5 +20,12 @@ public interface HttpPostRequestBuilder {
      * @return A request builder to further configure the POST.
      */
     HttpPostWithContentRequestBuilder content(String content);
+
+    /**
+     * Builds a POST request without a body.
+     *
+     * @return The prepared POST request.
+     */
+    HttpRequest emptyBody();
 
 }

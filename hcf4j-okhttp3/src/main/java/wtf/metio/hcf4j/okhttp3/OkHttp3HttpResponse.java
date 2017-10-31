@@ -30,4 +30,9 @@ final class OkHttp3HttpResponse implements HttpResponse {
         return statusCode;
     }
 
+    @Override
+    public boolean isSuccess() {
+        return statusCode == 200;
+    }
+
 }

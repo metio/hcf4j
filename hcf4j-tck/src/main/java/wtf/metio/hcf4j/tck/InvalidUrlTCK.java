@@ -47,7 +47,7 @@ public abstract class InvalidUrlTCK implements HttpClientTCK {
     private static DynamicTest throwExceptionDuringExecution(final String url, final String methodName,
             final Function<String, ?> requestMethod) {
         return dynamicTest(createDisplayName(url, methodName), () -> {
-            final HttpRequestException exception = Assertions.expectThrows(HttpRequestException.class,
+            final HttpRequestException exception = Assertions.assertThrows(HttpRequestException.class,
                     () -> requestMethod.apply(url));
             Assertions.assertEquals(createExceptionMessage(url), exception.getMessage());
         });

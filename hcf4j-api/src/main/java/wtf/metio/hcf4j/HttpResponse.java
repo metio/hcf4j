@@ -23,4 +23,9 @@ public interface HttpResponse {
      */
     int statusCode();
 
+    /**
+     * @return <code>true</code> if the response contains a 2xx status code.
+     */
+    boolean isSuccess();
+
 }
