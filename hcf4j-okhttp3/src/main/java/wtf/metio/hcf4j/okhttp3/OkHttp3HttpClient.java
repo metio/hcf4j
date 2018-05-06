@@ -21,6 +21,7 @@ import okhttp3.Request;
 import wtf.metio.hcf4j.HttpClient;
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpPutRequestBuilder;
 import wtf.metio.hcf4j.errors.UrlErrors;
 import wtf.metio.hcf4j.exception.HttpRequestException;
 
@@ -79,9 +80,8 @@ final class OkHttp3HttpClient implements HttpClient {
     }
 
     @Override
-    public void put(final String url) {
-        // TODO Auto-generated method stub
-
+    public HttpPutRequestBuilder put(final String url) {
+        return new OkHttp3HttpPutRequestBuilder(client, mediaTypeCreator, messages, url(url));
     }
 
     @Override

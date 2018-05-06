@@ -6,19 +6,12 @@
  */
 package wtf.metio.hcf4j.builder;
 
-import wtf.metio.hcf4j.HttpRequest;
-
 /**
  *
  *
  */
-public interface HttpPostWithContentRequestBuilder {
+public interface HttpPostWithContentRequestBuilder extends SupportsMediaType {
 
-    /**
-     * @param mediaType
-     *            The media type to use.
-     * @return The configured {@link HttpRequest}.
-     */
-    HttpRequest mediaType(String mediaType);
+    // empty interface (for now..)
 
 }

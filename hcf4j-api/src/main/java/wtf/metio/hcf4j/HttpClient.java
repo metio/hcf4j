@@ -8,6 +8,7 @@ package wtf.metio.hcf4j;
 
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpPutRequestBuilder;
 
 /**
  * Starting interface for HTTP client actions.
@@ -37,8 +38,9 @@ public interface HttpClient {
     /**
      * @param url
      *            The target URL.
+     * @return A request builder to further configure the PUT request.
      */
-    void put(String url);
+    HttpPutRequestBuilder put(String url);
 
     /**
      * @param url

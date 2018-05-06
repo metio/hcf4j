@@ -10,13 +10,8 @@ package wtf.metio.hcf4j.builder;
  *
  *
  */
-public interface HttpPostRequestBuilder extends SupportsEmptyBody {
+public interface HttpPutWithContentRequestBuilder extends SupportsMediaType {
 
-    /**
-     * @param content
-     *            The request body to POST.
-     * @return A request builder to further configure the POST.
-     */
-    HttpPostWithContentRequestBuilder content(String content);
+    // empty interface (for now..)
 
 }
