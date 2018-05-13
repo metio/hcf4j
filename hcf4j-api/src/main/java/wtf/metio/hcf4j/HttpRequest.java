@@ -9,6 +9,7 @@ package wtf.metio.hcf4j;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ForkJoinPool;
 
 import org.eclipse.jdt.annotation.Checks;
 
@@ -30,11 +31,22 @@ public interface HttpRequest {
     HttpResponse executeOnCallingThread();
 
     /**
+     * Performs a <strong>non-blocking</strong> HTTP request in the common fork/join pool.
+     *
+     * @return A {@link CompletionStage} for async processing.
+     * @see {@link #executeInPool(Executor)}
+     */
+    default CompletionStage<HttpResponse> executeInBackground() {
+        return executeInPool(Checks.requireNonNull(ForkJoinPool.commonPool()));
+    }
+
+    /**
      * Performs a <strong>non-blocking</strong> HTTP request.
      *
      * @param executor
      *            The {@link Executor} to use.
      * @return A {@link CompletionStage} for async processing.
+     * @see {@link #executeInBackground()}
      */
     default CompletionStage<HttpResponse> executeInPool(final Executor executor) {
         return Checks.requireNonNull(CompletableFuture
