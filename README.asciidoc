@@ -41,6 +41,13 @@ httpClient.get("http://example.com")
     .executeInBackground()
     .thenApply(HttpResponse::body)
     .thenAccept(System.out::println);
+
+httpClient.post("http://example.com/api")
+    .content("your-data")
+    .mediaType("text/plain")
+    .executeInBackground()
+    .thenApply(HttpResponse::statusCode)
+    .thenAccept(System.out::println)
 ----
 
 == License
