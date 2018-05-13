@@ -12,25 +12,31 @@ Provides an abstraction over the various HTTP client implementations in Java.
 
 ----
 // decide implementation by choosing a specific factory (here OkHttp3)
-HttpClientFactory factory = new OkHttp3HttpClientFactory();
+var factory = new OkHttp3HttpClientFactory();
+
+// or use ServiceLoader
+var factory = HttpClients.factory();
 
 // fine tune w/ builder
-HttpClient httpClient = factory
+var httpClient = factory
     .client()
     .userAgent("my-awesome/client 1.2.3")
     .build();
 
+// or just use defaults for everything
+var httpClient = HttpClients.client();
+
 // blocking request
-HttpResponse response = httpClient.get("http://example.com")
+var response = httpClient.get("http://example.com")
     .executeOnCallingThread();
 
 // non-blocking requests
-CompletionStage<HttpResponse> responsePromise = httpClient.get("http://example.com")
+var responsePromise = httpClient.get("http://example.com")
     .executeInBackground();
 
 // inspect responses of blocking requests
-String responseBody = response.body();
-int statusCode = response.statusCode();
+var responseBody = response.body();
+var statusCode = response.statusCode();
 
 // handle non-blocking requests
 responsePromise
