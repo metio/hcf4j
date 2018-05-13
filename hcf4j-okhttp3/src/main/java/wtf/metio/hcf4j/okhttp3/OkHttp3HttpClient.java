@@ -19,6 +19,7 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.builder.HttpDeleteRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpHeadRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
@@ -48,8 +49,43 @@ final class OkHttp3HttpClient implements HttpClient {
     }
 
     @Override
+    public HttpHeadRequestBuilder head(final String url) {
+        return new OkHttp3HttpHeadRequestBuilder(client, mediaTypeCreator, messages,
+                Checks.requireNonNull(url(url).head()));
+    }
+
+    @Override
     public HttpPostRequestBuilder post(final String url) {
         return new OkHttp3HttpPostRequestBuilder(client, mediaTypeCreator, messages, url(url));
+    }
+
+    @Override
+    public HttpPutRequestBuilder put(final String url) {
+        return new OkHttp3HttpPutRequestBuilder(client, mediaTypeCreator, messages, url(url));
+    }
+
+    @Override
+    public HttpDeleteRequestBuilder delete(final String url) {
+        return new OkHttp3HttpDeleteRequestBuilder(client, mediaTypeCreator, messages,
+                Checks.requireNonNull(url(url).delete()));
+    }
+
+    @Override
+    public void connect(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void trace(final String url) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void patch(final String url) {
+        // TODO Auto-generated method stub
+
     }
 
     private Request.Builder url(final String url) {
@@ -72,41 +108,6 @@ final class OkHttp3HttpClient implements HttpClient {
     private Supplier<HttpRequestException> httpRequestException(final String url) {
         return () -> new HttpRequestException(Checks.requireNonEmpty(
                 messages.getMessage(UrlErrors.INVALID_URL, url)));
-    }
-
-    @Override
-    public HttpHeadRequestBuilder head(final String url) {
-        return new OkHttp3HttpHeadRequestBuilder(client, mediaTypeCreator, messages,
-                Checks.requireNonNull(url(url).head()));
-    }
-
-    @Override
-    public HttpPutRequestBuilder put(final String url) {
-        return new OkHttp3HttpPutRequestBuilder(client, mediaTypeCreator, messages, url(url));
-    }
-
-    @Override
-    public void delete(final String url) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void connect(final String url) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void trace(final String url) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void patch(final String url) {
-        // TODO Auto-generated method stub
-
     }
 
 }

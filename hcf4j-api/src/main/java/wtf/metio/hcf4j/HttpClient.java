@@ -6,6 +6,7 @@
  */
 package wtf.metio.hcf4j;
 
+import wtf.metio.hcf4j.builder.HttpDeleteRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpHeadRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
@@ -47,8 +48,9 @@ public interface HttpClient {
     /**
      * @param url
      *            The target URL.
+     * @return A request builder to further configure the DELETE request.
      */
-    void delete(String url);
+    HttpDeleteRequestBuilder delete(String url);
 
     /**
      * @param url
