@@ -35,6 +35,10 @@ var responsePromise = httpClient.get("http://example.com")
     .mediaType("application/json")
     .executeInBackground();
 
+// Java 9+ Flow based requests
+client.get("http://example.com")
+    .executeAsFlow(response -> response.body());
+
 // inspect responses of blocking requests
 var responseBody = response.body();
 var statusCode = response.statusCode();
