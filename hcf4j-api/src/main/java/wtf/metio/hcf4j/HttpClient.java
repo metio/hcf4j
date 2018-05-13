@@ -7,6 +7,7 @@
 package wtf.metio.hcf4j;
 
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpHeadRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPutRequestBuilder;
 
@@ -25,8 +26,9 @@ public interface HttpClient {
     /**
      * @param url
      *            The target URL.
+     * @return A request builder to further configure the HEAD request.
      */
-    void head(String url);
+    HttpHeadRequestBuilder head(String url);
 
     /**
      * @param url

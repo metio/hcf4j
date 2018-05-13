@@ -20,6 +20,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import wtf.metio.hcf4j.HttpClient;
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpHeadRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPutRequestBuilder;
 import wtf.metio.hcf4j.errors.UrlErrors;
@@ -42,7 +43,7 @@ final class OkHttp3HttpClient implements HttpClient {
 
     @Override
     public HttpGetRequestBuilder get(final String url) {
-        return new OkHttp3HttpRequest(client, mediaTypeCreator, messages,
+        return new OkHttp3HttpGetRequestBuilder(client, mediaTypeCreator, messages,
                 Checks.requireNonNull(url(url).get()));
     }
 
@@ -74,9 +75,9 @@ final class OkHttp3HttpClient implements HttpClient {
     }
 
     @Override
-    public void head(final String url) {
-        // TODO Auto-generated method stub
-
+    public HttpHeadRequestBuilder head(final String url) {
+        return new OkHttp3HttpHeadRequestBuilder(client, mediaTypeCreator, messages,
+                Checks.requireNonNull(url(url).head()));
     }
 
     @Override
