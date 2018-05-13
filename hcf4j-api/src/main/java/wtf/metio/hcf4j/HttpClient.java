@@ -56,18 +56,6 @@ public interface HttpClient {
      * @param url
      *            The target URL.
      */
-    void connect(String url);
-
-    /**
-     * @param url
-     *            The target URL.
-     */
-    void trace(String url);
-
-    /**
-     * @param url
-     *            The target URL.
-     */
     void patch(String url);
 
 }

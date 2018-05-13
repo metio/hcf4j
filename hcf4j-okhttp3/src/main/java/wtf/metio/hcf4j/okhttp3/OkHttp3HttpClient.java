@@ -71,18 +71,6 @@ final class OkHttp3HttpClient implements HttpClient {
     }
 
     @Override
-    public void connect(final String url) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void trace(final String url) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
     public void patch(final String url) {
         // TODO Auto-generated method stub
 
