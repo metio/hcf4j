@@ -7,8 +7,7 @@
 package wtf.metio.hcf4j.builder;
 
 /**
- *
- *
+ * Builder for POST requests.
  */
 public interface HttpPostRequestBuilder extends MightHaveContent<HttpPostWithContentRequestBuilder> {
 

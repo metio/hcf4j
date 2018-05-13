@@ -7,8 +7,7 @@
 package wtf.metio.hcf4j.builder;
 
 /**
- *
- *
+ * Builder for POST requests with content.
  */
 public interface HttpPostWithContentRequestBuilder extends SupportsMediaType {
 

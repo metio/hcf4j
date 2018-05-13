@@ -7,8 +7,7 @@
 package wtf.metio.hcf4j.builder;
 
 /**
- *
- *
+ * Builder for PUT requests.
  */
 public interface HttpPutRequestBuilder extends MightHaveContent<HttpPutWithContentRequestBuilder> {
 

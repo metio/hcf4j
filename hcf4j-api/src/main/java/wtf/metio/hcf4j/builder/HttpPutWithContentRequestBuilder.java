@@ -7,8 +7,7 @@
 package wtf.metio.hcf4j.builder;
 
 /**
- *
- *
+ * Builder for PUT requests with content.
  */
 public interface HttpPutWithContentRequestBuilder extends SupportsMediaType {
 

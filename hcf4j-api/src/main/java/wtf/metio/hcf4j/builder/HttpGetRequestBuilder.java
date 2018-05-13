@@ -9,8 +9,7 @@ package wtf.metio.hcf4j.builder;
 import wtf.metio.hcf4j.HttpRequest;
 
 /**
- *
- *
+ * Builder for GET requests.
  */
 public interface HttpGetRequestBuilder extends HttpRequest, SupportsMediaType {
 
