@@ -2,8 +2,6 @@ package wtf.metio.hcf4j.okhttp3;
 
 import org.eclipse.jdt.annotation.Checks;
 
-import okhttp3.MediaType;
-import okhttp3.Request.Builder;
 import okhttp3.RequestBody;
 import wtf.metio.hcf4j.HttpRequest;
 import wtf.metio.hcf4j.builder.HttpPatchWithContentRequestBuilder;
@@ -22,9 +20,9 @@ final class OkHttp3HttpPatchWithContentRequestBuilder extends AbstractOkHttp3Ada
 
     @Override
     public HttpRequest mediaType(final String mediaType) {
-        final MediaType okHttpMediaType = mediaTypeCreator.apply(mediaType);
-        final RequestBody body = RequestBody.create(okHttpMediaType, content);
-        final Builder patch = requestBuilder.patch(body);
+        final var okHttpMediaType = mediaTypeCreator.apply(mediaType);
+        final var body = RequestBody.create(okHttpMediaType, content);
+        final var patch = requestBuilder.patch(body);
 
         return new OkHttp3HttpRequest(this, Checks.requireNonNull(patch));
     }

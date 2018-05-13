@@ -11,9 +11,6 @@ import org.junit.Test;
 import org.mockserver.client.server.MockServerClient;
 
 import wtf.metio.hcf4j.HttpClient;
-import wtf.metio.hcf4j.HttpResponse;
-import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
-import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 
 /**
  *
@@ -33,10 +30,10 @@ public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
     @Test
     public void shouldCreateNonNullGetRequestBuilderForValidHttpUrl() {
         // given
-        final String url = "http://localhost";
+        final var url = "http://localhost";
 
         // when
-        final HttpGetRequestBuilder builder = client.get(url);
+        final var builder = client.get(url);
 
         // then
         Assert.assertNotNull(builder);
@@ -48,10 +45,10 @@ public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
     @Test
     public void shouldCreateNonNullPostRequestBuilderForValidHttpUrl() {
         // given
-        final String url = "http://localhost";
+        final var url = "http://localhost";
 
         // when
-        final HttpPostRequestBuilder builder = client.post(url);
+        final var builder = client.post(url);
 
         // then
         Assert.assertNotNull(builder);
@@ -71,7 +68,7 @@ public class OkHttp3HttpClientTest extends AbstractMockHttpTest {
                         .withBody("test"));
 
         // when
-        final HttpResponse response = client.get(path("/test")).executeOnCallingThread();
+        final var response = client.get(path("/test")).executeOnCallingThread();
 
         // then
         Assert.assertEquals("test", response.body());

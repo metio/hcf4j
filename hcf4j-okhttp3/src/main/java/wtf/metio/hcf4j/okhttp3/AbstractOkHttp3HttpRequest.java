@@ -18,7 +18,6 @@ import ch.qos.cal10n.IMessageConveyor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request.Builder;
-import okhttp3.Response;
 import wtf.metio.hcf4j.HttpRequest;
 import wtf.metio.hcf4j.HttpResponse;
 import wtf.metio.hcf4j.errors.ConnectionErrors;
@@ -45,7 +44,7 @@ abstract class AbstractOkHttp3HttpRequest extends AbstractOkHttp3Adapter impleme
 
     @Override
     public final HttpResponse executeOnCallingThread() {
-        try (final Response response = client.newCall(requestBuilder.build()).execute()) {
+        try (final var response = client.newCall(requestBuilder.build()).execute()) {
             return new OkHttp3HttpResponse(
                     requireNonNull(response.body().string()),
                     response.code());

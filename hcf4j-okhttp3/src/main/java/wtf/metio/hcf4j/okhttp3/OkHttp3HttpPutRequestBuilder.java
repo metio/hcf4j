@@ -31,8 +31,8 @@ final class OkHttp3HttpPutRequestBuilder extends AbstractOkHttp3Adapter implemen
 
     @Override
     public HttpRequest emptyBody() {
-        final RequestBody body = RequestBody.create(null, new byte[0]);
-        final Builder post = requestBuilder.put(body);
+        final var body = RequestBody.create(null, new byte[0]);
+        final var post = requestBuilder.put(body);
 
         return new OkHttp3HttpRequest(this, Checks.requireNonNull(post));
     }

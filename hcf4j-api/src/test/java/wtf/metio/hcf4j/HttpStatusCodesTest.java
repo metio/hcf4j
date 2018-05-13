@@ -21,10 +21,10 @@ public class HttpStatusCodesTest {
     @Test
     public void shouldDetectHttpOk() {
         // given
-        final int statusCode = 200;
+        final var statusCode = 200;
 
         // when
-        final boolean success = HttpStatusCodes.isSuccess(statusCode);
+        final var success = HttpStatusCodes.isSuccess(statusCode);
 
         // then
         Assert.assertTrue(success);
