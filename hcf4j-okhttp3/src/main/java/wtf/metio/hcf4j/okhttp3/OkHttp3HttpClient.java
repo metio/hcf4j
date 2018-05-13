@@ -22,6 +22,7 @@ import wtf.metio.hcf4j.HttpClient;
 import wtf.metio.hcf4j.builder.HttpDeleteRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpHeadRequestBuilder;
+import wtf.metio.hcf4j.builder.HttpPatchRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPutRequestBuilder;
 import wtf.metio.hcf4j.errors.UrlErrors;
@@ -71,9 +72,8 @@ final class OkHttp3HttpClient implements HttpClient {
     }
 
     @Override
-    public void patch(final String url) {
-        // TODO Auto-generated method stub
-
+    public HttpPatchRequestBuilder patch(final String url) {
+        return new OkHttp3HttpPatchRequestBuilder(client, mediaTypeCreator, messages, url(url));
     }
 
     private Request.Builder url(final String url) {
