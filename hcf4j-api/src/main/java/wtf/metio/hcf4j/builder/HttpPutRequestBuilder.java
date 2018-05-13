@@ -10,13 +10,8 @@ package wtf.metio.hcf4j.builder;
  *
  *
  */
-public interface HttpPutRequestBuilder extends SupportsEmptyBody {
+public interface HttpPutRequestBuilder extends MightHaveContent<HttpPutWithContentRequestBuilder> {
 
-    /**
-     * @param content
-     *            The request body to PUT.
-     * @return A request builder to further configure the PUT.
-     */
-    HttpPutWithContentRequestBuilder content(String content);
+    // empty interface for now
 
 }
