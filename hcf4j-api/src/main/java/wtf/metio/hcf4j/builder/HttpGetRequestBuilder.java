@@ -12,7 +12,7 @@ import wtf.metio.hcf4j.HttpRequest;
  *
  *
  */
-public interface HttpGetRequestBuilder extends HttpRequest {
+public interface HttpGetRequestBuilder extends HttpRequest, SupportsMediaType {
 
     // TODO add GET specific methods
 

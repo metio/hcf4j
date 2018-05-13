@@ -32,6 +32,7 @@ var response = httpClient.get("http://example.com")
 
 // non-blocking requests
 var responsePromise = httpClient.get("http://example.com")
+    .mediaType("application/json")
     .executeInBackground();
 
 // inspect responses of blocking requests
