@@ -6,25 +6,33 @@
  */
 package wtf.metio.hcf4j.httpclient;
 
+import java.util.function.Function;
+
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 
 import ch.qos.cal10n.IMessageConveyor;
-import wtf.metio.hcf4j.HttpResponse;
+import wtf.metio.hcf4j.HttpRequest;
 import wtf.metio.hcf4j.builder.HttpGetRequestBuilder;
 
-final class HCHttpGetRequestBuilder implements HttpGetRequestBuilder {
+final class HCHttpGetRequestBuilder extends AbstractHCHttpRequest<HttpGet> implements HttpGetRequestBuilder {
 
-    private final HttpClient       httpClient;
-    private final IMessageConveyor messages;
+    protected HCHttpGetRequestBuilder(final AbstractHCAdapter<HttpGet> adapter) {
+        super(adapter);
+    }
 
-    public HCHttpGetRequestBuilder(final HttpClient httpClient, final IMessageConveyor messages) {
-        this.httpClient = httpClient;
-        this.messages = messages;
+    protected HCHttpGetRequestBuilder(
+            final HttpClient client,
+            final Function<String, String> mediaTypeCreator,
+            final IMessageConveyor messages,
+            final HttpGet requestType) {
+        super(client, mediaTypeCreator, messages, requestType);
     }
 
     @Override
-    public HttpResponse executeOnCallingThread() {
-        return new HCHttpRequest(httpClient, messages).executeOnCallingThread();
+    public HttpRequest mediaType(final String mediaType) {
+        requestType.addHeader("Accept", mediaType); //$NON-NLS-1$
+        return new HCHttpRequest<>(this);
     }
 
 }

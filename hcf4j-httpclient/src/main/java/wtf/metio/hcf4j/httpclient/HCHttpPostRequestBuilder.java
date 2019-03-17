@@ -6,31 +6,38 @@
  */
 package wtf.metio.hcf4j.httpclient;
 
+import java.util.function.Function;
+
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
 
 import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hcf4j.HttpRequest;
 import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPostWithContentRequestBuilder;
 
-final class HCHttpPostRequestBuilder implements HttpPostRequestBuilder {
+final class HCHttpPostRequestBuilder extends AbstractHCHttpRequest<HttpPost> implements HttpPostRequestBuilder {
 
-    private final HttpClient       httpClient;
-    private final IMessageConveyor messages;
+    protected HCHttpPostRequestBuilder(final AbstractHCAdapter<HttpPost> adapter) {
+        super(adapter);
+    }
 
-    HCHttpPostRequestBuilder(final HttpClient httpClient, final IMessageConveyor messages) {
-        this.httpClient = httpClient;
-        this.messages = messages;
+    protected HCHttpPostRequestBuilder(
+            final HttpClient client,
+            final Function<String, String> mediaTypeCreator,
+            final IMessageConveyor messages,
+            final HttpPost requestType) {
+        super(client, mediaTypeCreator, messages, requestType);
     }
 
     @Override
     public HttpPostWithContentRequestBuilder content(final String content) {
-        return new HCHttpPostWithContentRequestBuilder(httpClient, messages);
+        return new HCHttpPostWithContentRequestBuilder(this);
     }
 
     @Override
     public HttpRequest emptyBody() {
-        return new HCHttpRequest(httpClient, messages);
+        return new HCHttpRequest<>(this);
     }
 
 }

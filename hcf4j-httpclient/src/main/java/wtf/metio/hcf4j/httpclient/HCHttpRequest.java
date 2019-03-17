@@ -6,47 +6,25 @@
  */
 package wtf.metio.hcf4j.httpclient;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.util.function.Function;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.util.EntityUtils;
-import org.eclipse.jdt.annotation.Checks;
+import org.apache.http.client.methods.HttpRequestBase;
 
 import ch.qos.cal10n.IMessageConveyor;
-import wtf.metio.hcf4j.HttpRequest;
-import wtf.metio.hcf4j.HttpResponse;
-import wtf.metio.hcf4j.errors.ConnectionErrors;
-import wtf.metio.hcf4j.exception.HttpRequestException;
 
-final class HCHttpRequest implements HttpRequest {
+final class HCHttpRequest<TYPE extends HttpRequestBase> extends AbstractHCHttpRequest<TYPE> {
 
-    private final HttpClient       httpClient;
-    private final IMessageConveyor messages;
-
-    HCHttpRequest(final HttpClient httpClient, final IMessageConveyor messages) {
-        this.httpClient = httpClient;
-        this.messages = messages;
+    protected HCHttpRequest(final AbstractHCAdapter<TYPE> adapter) {
+        super(adapter);
     }
 
-    @Override
-    public HttpResponse executeOnCallingThread() {
-        // see https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html
-        try {
-            final HttpGet httpGet = new HttpGet("http://targethost/homepage"); //$NON-NLS-1$
-            final org.apache.http.HttpResponse response = httpClient.execute(httpGet);
-            final HttpEntity entity = response.getEntity();
-            EntityUtils.consume(entity);
-
-            return new HCHttpResponse(
-                    Checks.requireNonNull(EntityUtils.toString(entity, StandardCharsets.UTF_8)),
-                    response.getStatusLine().getStatusCode());
-        } catch (final IOException exception) {
-            throw new HttpRequestException(Checks.requireNonEmpty(
-                    messages.getMessage(ConnectionErrors.UNABLE_TO_CONNECT)), exception);
-        }
+    protected HCHttpRequest(
+            final HttpClient client,
+            final Function<String, String> mediaTypeCreator,
+            final IMessageConveyor messages,
+            final TYPE requestType) {
+        super(client, mediaTypeCreator, messages, requestType);
     }
 
 }

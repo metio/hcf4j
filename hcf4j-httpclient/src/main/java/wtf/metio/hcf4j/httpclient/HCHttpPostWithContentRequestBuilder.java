@@ -6,25 +6,36 @@
  */
 package wtf.metio.hcf4j.httpclient;
 
+import java.util.function.Function;
+
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
 
 import ch.qos.cal10n.IMessageConveyor;
 import wtf.metio.hcf4j.HttpRequest;
 import wtf.metio.hcf4j.builder.HttpPostWithContentRequestBuilder;
 
-final class HCHttpPostWithContentRequestBuilder implements HttpPostWithContentRequestBuilder {
+final class HCHttpPostWithContentRequestBuilder extends AbstractHCHttpRequest<HttpPost>
+        implements HttpPostWithContentRequestBuilder {
 
-    private final HttpClient       httpClient;
-    private final IMessageConveyor messages;
+    protected HCHttpPostWithContentRequestBuilder(final AbstractHCAdapter<HttpPost> adapter) {
+        super(adapter);
+    }
 
-    HCHttpPostWithContentRequestBuilder(final HttpClient httpClient, final IMessageConveyor messages) {
-        this.httpClient = httpClient;
-        this.messages = messages;
+    protected HCHttpPostWithContentRequestBuilder(
+            final HttpClient client,
+            final Function<String, String> mediaTypeCreator,
+            final IMessageConveyor messages,
+            final HttpPost requestType) {
+        super(client, mediaTypeCreator, messages, requestType);
     }
 
     @Override
     public HttpRequest mediaType(final String mediaType) {
-        return new HCHttpRequest(httpClient, messages);
+        final var hcMediaType = mediaTypeCreator.apply(mediaType);
+        requestType.addHeader("Accept", hcMediaType); //$NON-NLS-1$
+
+        return new HCHttpRequest<>(this);
     }
 
 }
