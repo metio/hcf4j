@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hcf4j-errorcodes" />
+        <module name="hcf4j-api" />
+        <module name="hcf4j-okhttp3" />
+        <module name="hcf4j-shared" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hcf4j" target="11" />
+      <module name="hcf4j-apache-fluent-hc" target="14" />
+      <module name="hcf4j-apache-httpclient" target="14" />
+      <module name="hcf4j-api" target="11" />
+      <module name="hcf4j-asynchttpclient" target="14" />
+      <module name="hcf4j-errorcodes" target="11" />
+      <module name="hcf4j-jdk-httpclient" target="14" />
+      <module name="hcf4j-okhttp3" target="11" />
+      <module name="hcf4j-shared" target="11" />
+      <module name="hcf4j-tck" target="14" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
