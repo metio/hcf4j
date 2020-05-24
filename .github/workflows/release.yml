@@ -43,7 +43,7 @@ jobs:
           body: |
             Automated release, see [commits](https://github.com/metio/hcf4j/commits/${{steps.release.outputs.version}}) for changes.
 
-            Use this project as a parent POM:
+            Include this project as a dependency:
             ```xml
             <!-- always required -->
             <dependency>
