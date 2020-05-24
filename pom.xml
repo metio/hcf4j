@@ -41,6 +41,23 @@
         </repository>
     </repositories>
 
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--                          DISTRIBUTION MANAGEMENT                        -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- https://maven.apache.org/pom.html#Distribution_Management -->
+    <distributionManagement>
+        <site>
+            <id>metio</id>
+            <name>official website</name>
+            <url>https://hcf4j.projects.metio.wtf</url>
+        </site>
+        <repository>
+            <id>github</id>
+            <name>GitHub hcf4j Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/metio/hcf4j</url>
+        </repository>
+    </distributionManagement>
+
     <modules>
         <module>hcf4j-api</module>
         <module>hcf4j-errorcodes</module>

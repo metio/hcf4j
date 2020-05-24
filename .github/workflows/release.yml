@@ -17,7 +17,45 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - name: Create release version
+        id: release
+        run: echo "::set-output name=version::$(date +'%Y.%m.%d-%H%M%S')"
+      - name: Set release version
+        run: mvn --batch-mode versions:set -DnewVersion=${{steps.release.outputs.version}} -DgenerateBackupPoms=false
       - name: Verify Project
         run: mvn --batch-mode verify
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{steps.release.outputs.version}}
+          release_name: Release ${{steps.release.outputs.version}}
+          draft: false
+          prerelease: false
+          body: |
+            Automated release, see [commits](https://github.com/metio/hcf4j/commits/${{steps.release.outputs.version}}) for changes.
+
+            Use this project as a parent POM:
+            ```xml
+            <!-- always required -->
+            <dependency>
+              <groupId>wtf.metio.hcf4j</groupId>
+              <artifactId>hcf4j-api</artifactId>
+              <version>${{steps.release.outputs.version}}</version>
+            </dependency>
+
+            <!-- pick one of the providers -->
+            <dependency>
+              <groupId>wtf.metio.hcf4j</groupId>
+              <artifactId>hcf4j-okhttp3</artifactId>
+              <version>${{steps.release.outputs.version}}</version>
+            </dependency>
+            ```
