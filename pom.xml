@@ -7,50 +7,62 @@
     in the LICENSE file.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <!--                                  PARENT                                 -->
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <!-- https://maven.apache.org/pom.html#Inheritance -->
-  <parent>
-    <groupId>de.xn--ho-hia.maven.parents</groupId>
-    <artifactId>maven-parents-java-prototype</artifactId>
-    <version>2017.10.15-193334</version>
-  </parent>
+    <parent>
+        <groupId>wtf.metio.maven.parents</groupId>
+        <artifactId>maven-parents-java-prototype</artifactId>
+        <version>2020.05.24-162837</version>
+    </parent>
 
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <!--                               INFORMATIONS                              -->
-  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-  <groupId>wtf.metio.hcf4j</groupId>
-  <artifactId>hcf4j</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--                               INFORMATIONS                              -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <groupId>wtf.metio.hcf4j</groupId>
+    <artifactId>hcf4j</artifactId>
+    <version>9999.99.99-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>HTTP Client Facade for Java</description>
+    <name>hcf4j</name>
 
-  <modules>
-    <module>hcf4j-api</module>
-    <module>hcf4j-errorcodes</module>
-    <module>hcf4j-tck</module>
-    <module>hcf4j-shared</module>
-    <module>hcf4j-okhttp3</module>
-    <module>hcf4j-httpclient</module>
-    <module>hcf4j-fluent-hc</module>
-  </modules>
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub maven-build-process Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/metio/maven-build-process</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
-  <dependencies>
-    <dependency>
-      <groupId>ch.qos.cal10n</groupId>
-      <artifactId>cal10n-api</artifactId>
-      <version>0.8.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.jdt</groupId>
-      <artifactId>org.eclipse.jdt.annotation</artifactId>
-      <version>2.1.0</version>
-    </dependency>
-  </dependencies>
+    <modules>
+        <module>hcf4j-api</module>
+        <module>hcf4j-errorcodes</module>
+        <!--    <module>hcf4j-tck</module>-->
+        <module>hcf4j-shared</module>
+        <module>hcf4j-okhttp3</module>
+        <!--    <module>hcf4j-apache-httpclient</module>-->
+        <!--    <module>hcf4j-apache-fluent-hc</module>-->
+        <!--    <module>hcf4j-jdk-httpclient</module>-->
+        <!--    <module>hcf4j-asynchttpclient</module>-->
+    </modules>
 
-  <description>HTTP Client Facade for Java</description>
-  <name>hcf4j</name>
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.cal10n</groupId>
+            <artifactId>cal10n-api</artifactId>
+            <version>0.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.annotation</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

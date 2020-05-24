@@ -4,7 +4,7 @@
   <parent>
     <groupId>wtf.metio.hcf4j</groupId>
     <artifactId>hcf4j</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>9999.99.99-SNAPSHOT</version>
   </parent>
 
   <artifactId>hcf4j-errorcodes</artifactId>

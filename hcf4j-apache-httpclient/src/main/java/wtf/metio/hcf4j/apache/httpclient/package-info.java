@@ -4,15 +4,8 @@
  * including this file, may be copied, modified, propagated, or distributed except according to the terms contained
  * in the LICENSE file.
  */
-package wtf.metio.hcf4j.builder;
-
 /**
- * Builder for POST requests.
+ * HTTP client facade adapter for Apache HttpComponents
  */
-public interface HttpPostRequestBuilder extends MightHaveContent<HttpPostWithContentRequestBuilder> {
-
-    // empty interface for now
-
-    HttpPostRequestBuilder header(String name, String value);
-
-}
+@org.eclipse.jdt.annotation.NonNullByDefault
+package wtf.metio.hcf4j.apache.httpclient;

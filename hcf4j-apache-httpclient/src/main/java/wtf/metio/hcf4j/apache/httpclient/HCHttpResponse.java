@@ -4,18 +4,16 @@
  * including this file, may be copied, modified, propagated, or distributed except according to the terms contained
  * in the LICENSE file.
  */
-package wtf.metio.hcf4j.okhttp3;
-
-import org.eclipse.jdt.annotation.Checks;
+package wtf.metio.hcf4j.apache.httpclient;
 
 import wtf.metio.hcf4j.HttpResponse;
 
-final class OkHttp3HttpResponse implements HttpResponse {
+final class HCHttpResponse implements HttpResponse {
 
     private final String body;
     private final int    statusCode;
 
-    OkHttp3HttpResponse(final String body, final int statusCode) {
+    public HCHttpResponse(final String body, final int statusCode) {
         this.body = body;
         this.statusCode = statusCode;
     }

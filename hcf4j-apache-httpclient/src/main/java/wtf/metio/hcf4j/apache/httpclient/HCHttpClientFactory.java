@@ -4,24 +4,22 @@
  * including this file, may be copied, modified, propagated, or distributed except according to the terms contained
  * in the LICENSE file.
  */
-package wtf.metio.hcf4j.tck;
+package wtf.metio.hcf4j.apache.httpclient;
 
 import wtf.metio.hcf4j.HttpClient;
+import wtf.metio.hcf4j.factory.HttpClientBuilder;
+import wtf.metio.hcf4j.factory.HttpClientFactory;
 
-/**
- * Most general contract for a {@link HttpClient}. Supposed to be extended and subclassed.
- */
-public interface HttpClientTCK {
-    
-    int DEFAULT_PORT = 12345;
+final class HCHttpClientFactory implements HttpClientFactory {
 
-    /**
-     * @return A potentially new {@link HttpClient}.
-     */
-    HttpClient createHttpClient();
+    @Override
+    public HttpClient build() {
+        return client().buildHttpClient();
+    }
 
-    default String path(final String subpath) {
-        return "http://localhost:" + DEFAULT_PORT + subpath;
+    @Override
+    public HttpClientBuilder client() {
+        return new HCHttpClientBuilder();
     }
 
 }

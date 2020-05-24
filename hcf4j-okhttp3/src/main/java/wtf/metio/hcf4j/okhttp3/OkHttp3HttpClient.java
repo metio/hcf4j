@@ -27,6 +27,7 @@ import wtf.metio.hcf4j.builder.HttpPostRequestBuilder;
 import wtf.metio.hcf4j.builder.HttpPutRequestBuilder;
 import wtf.metio.hcf4j.errors.UrlErrors;
 import wtf.metio.hcf4j.exception.HttpRequestException;
+import wtf.metio.hcf4j.shared.SafeGuards;
 
 final class OkHttp3HttpClient implements HttpClient {
 
@@ -45,34 +46,40 @@ final class OkHttp3HttpClient implements HttpClient {
 
     @Override
     public HttpGetRequestBuilder get(final String url) {
+        SafeGuards.invalidUrl(url, messages);
         return new OkHttp3HttpGetRequestBuilder(client, mediaTypeCreator, messages,
                 Checks.requireNonNull(url(url).get()));
     }
 
     @Override
     public HttpHeadRequestBuilder head(final String url) {
+        SafeGuards.invalidUrl(url, messages);
         return new OkHttp3HttpHeadRequestBuilder(client, mediaTypeCreator, messages,
                 Checks.requireNonNull(url(url).head()));
     }
 
     @Override
     public HttpPostRequestBuilder post(final String url) {
+        SafeGuards.invalidUrl(url, messages);
         return new OkHttp3HttpPostRequestBuilder(client, mediaTypeCreator, messages, url(url));
     }
 
     @Override
     public HttpPutRequestBuilder put(final String url) {
+        SafeGuards.invalidUrl(url, messages);
         return new OkHttp3HttpPutRequestBuilder(client, mediaTypeCreator, messages, url(url));
     }
 
     @Override
     public HttpDeleteRequestBuilder delete(final String url) {
+        SafeGuards.invalidUrl(url, messages);
         return new OkHttp3HttpDeleteRequestBuilder(client, mediaTypeCreator, messages,
                 Checks.requireNonNull(url(url).delete()));
     }
 
     @Override
     public HttpPatchRequestBuilder patch(final String url) {
+        SafeGuards.invalidUrl(url, messages);
         return new OkHttp3HttpPatchRequestBuilder(client, mediaTypeCreator, messages, url(url));
     }
 

@@ -48,4 +48,9 @@ final class OkHttp3HttpPostRequestBuilder extends AbstractOkHttp3Adapter impleme
         return new OkHttp3HttpRequest(this, Checks.requireNonNull(post));
     }
 
+    @Override
+    public HttpPostRequestBuilder header(final String name, final String value) {
+        requestBuilder.header(name, value);
+        return this;
+    }
 }

@@ -42,7 +42,7 @@ public interface HttpRequest {
      * Performs a <strong>non-blocking</strong> HTTP request in the common fork/join pool.
      *
      * @return A {@link CompletionStage} for async processing.
-     * @see {@link #executeInPool(Executor)}
+     * @see #executeInPool(Executor)
      */
     default CompletionStage<HttpResponse> executeInBackground() {
         return executeInPool(Checks.requireNonNull(ForkJoinPool.commonPool()));
@@ -54,7 +54,7 @@ public interface HttpRequest {
      * @param executor
      *            The {@link Executor} to use.
      * @return A {@link CompletionStage} for async processing.
-     * @see {@link #executeInBackground()}
+     * @see #executeInBackground()
      */
     default CompletionStage<HttpResponse> executeInPool(final Executor executor) {
         return Checks.requireNonNull(CompletableFuture
